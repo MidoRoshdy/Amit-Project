@@ -22,22 +22,7 @@ class Login extends StatelessWidget {
             height: 13.h,
             child: Stack(
               children: [
-                //! back button
-                // Positioned(
-                //   top: 6.5.h,
-                //   left: 3.w,
-                //   child: Container(
-                //     alignment: Alignment.centerLeft,
-                //     height: 5.h,
-                //     width: 25.w,
-                //     child: IconButton(
-                //       onPressed: () => Navigator.pop(context),
-                //       icon: const Icon(Iconsax.arrow_left),
-                //     ),
-                //   ),
-                // ),
-                //! app logo
-                //////////////logo//////////////////////////////////
+                ////////////////////////logo//////////////////////////////////////////////////////////
                 Positioned(
                   top: 6.5.h,
                   right: 5.w,
@@ -73,7 +58,7 @@ class Login extends StatelessWidget {
                   Text("Please login to find your dream job",
                       style: TextStyle(
                           fontSize: 9.5.sp, fontWeight: FontWeight.w400)),
-                  //! username text field
+                  ////////////////////////////////// username////////////////////////////////////////////////////
                   Container(
                     padding: EdgeInsets.all(1.w),
                     margin: EdgeInsets.only(top: 3.5.h, bottom: 2.h),
@@ -123,7 +108,7 @@ class Login extends StatelessWidget {
                       ),
                     ),
                   ),
-                  //! password text field
+                  /////////////////////////////////////////////////// password////////////////////////////////
                   Container(
                     padding: EdgeInsets.all(1.w),
                     margin: EdgeInsets.only(bottom: 2.h),
@@ -183,7 +168,7 @@ class Login extends StatelessWidget {
                           )),
                     ),
                   ),
-                  //! remember me
+                  /////////////////////////////////////////////////Checkbox////////////////////////////
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -230,7 +215,7 @@ class Login extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  //! not a user
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -258,7 +243,7 @@ class Login extends StatelessWidget {
                     color: Colors.transparent,
                     height: 2.h,
                   ),
-                  //! login button
+                  ///////////////////////////////////////////login button////////////////////////////////////
                   SizedBox(
                     width: 90.w,
                     height: 7.h,
@@ -291,7 +276,7 @@ class Login extends StatelessWidget {
                     color: Colors.transparent,
                     height: 2.h,
                   ),
-                  //! or log in with account
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -316,7 +301,7 @@ class Login extends StatelessWidget {
                     color: Colors.transparent,
                     height: 2.h,
                   ),
-                  // ! google and facebook button
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

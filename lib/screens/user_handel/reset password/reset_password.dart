@@ -21,7 +21,7 @@ class ResetPassword extends StatelessWidget {
               height: 13.h,
               child: Stack(
                 children: [
-                  //! back button
+                  ////////////////////////// back button/////////////////////////////////////////
                   Positioned(
                     top: 6.5.h,
                     left: 3.w,
@@ -35,7 +35,7 @@ class ResetPassword extends StatelessWidget {
                       ),
                     ),
                   ),
-                  //! app logo
+                  /////////////////////////////////////////////////////logo/////////////////////////////////////
                   Positioned(
                     top: 6.5.h,
                     right: 5.w,
@@ -71,7 +71,7 @@ class ResetPassword extends StatelessWidget {
                         "Enter the email address you used when you joined and we'll send you instructions to reset your password.",
                         style: TextStyle(
                             fontSize: 9.5.sp, fontWeight: FontWeight.w400)),
-                    //! email text field
+                    ///////////////////////////////////// email /////////////////////////////////////////////
                     Container(
                       padding: EdgeInsets.all(1.w),
                       margin: EdgeInsets.only(top: 3.5.h, bottom: 2.h),
@@ -129,7 +129,7 @@ class ResetPassword extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    //! text to login
+                    ////////////////////////////////////// text to login///////////////////////////////////////////
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -146,7 +146,7 @@ class ResetPassword extends StatelessWidget {
                         ),
                       ],
                     ),
-                    //! password reset button
+                    /////////////////////////////////////////////button//////////////////////////////////////////////
                     SizedBox(
                       width: 90.w,
                       height: 7.h,
