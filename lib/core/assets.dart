@@ -12,31 +12,27 @@ class Assets {
   static String OnBoarding2 = "assets/OnBoarding/page2.png";
   static String OnBoarding3 = "assets/OnBoarding/page3.png";
   //login&&create
-  static const String facebook = "assets/login&&create/butten/facebook.png";
-  static const String google = "assets/login&&create/butten/google.png";
+  static const String facebook = "assets/button/Property 1=Facebook.png";
+  static const String google = "assets/button/Property 1=Google.png";
   //! countries
-  static const String argentina =
-      "assets/login&&create/countries/argentina.png";
-  static const String brazil = "assets/login&&create/countries/brazil.png";
-  static const String canada = "assets/login&&create/countries/canada.png";
-  static const String china = "assets/login&&create/countries/china.png";
-  static const String india = "assets/login&&create/countries/india.png";
-  static const String indonesia =
-      "assets/login&&create/countries/indonesia.png";
-  static const String malaysia = "assets/login&&create/countries/malaysia.png";
-  static const String philiphenes =
-      "assets/login&&create/countries/philiphenes.png";
-  static const String poland = "assets/login&&create/countries/poland.png";
-  static const String saudi = "assets/login&&create/countries/saudi.png";
-  static const String singapore =
-      "assets/login&&create/countries/singapore.png";
-  static const String us = "assets/login&&create/countries/us.png";
-  static const String vietnam = "assets/login&&create/countries/vietnam.png";
+  static const String argentina = "assets/countries/argentina.png";
+  static const String brazil = "assets/countries/brazil.png";
+  static const String canada = "assets/countries/canada.png";
+  static const String china = "assets/countries/china.png";
+  static const String india = "assets/countries/india.png";
+  static const String indonesia = "assets/countries/indonesia.png";
+  static const String malaysia = "assets/countries/malaysia.png";
+  static const String philiphenes = "assets/countries/philiphenes.png";
+  static const String poland = "assets/countries/poland.png";
+  static const String saudi = "assets/countries/saudi.png";
+  static const String singapore = "assets/countries/singapore.png";
+  static const String us = "assets/countries/us.png";
+  static const String vietnam = "assets/countries/vietnam.png";
 
   //! account created successfully
-  static const String ellipse5 = "assets/login&&createdesign/Ellipse 813.png";
-  static const String ellipse6 = "assets/login&&createdesign/Ellipse 1.png";
-  static const String ellipse7 = "assets/login&&create/design/Ellipse 810.png";
-  static const String ellipse8 = "assets/login&&create/design/Ellipse 811.png";
-  static const String ellipse9 = "assets/login&&create/design/Ellipse 812.png";
+  static const String ellipse5 = "assets/design/Ellipse 813.png";
+  static const String ellipse6 = "assets/design/Ellipse 1.png";
+  static const String ellipse7 = "assets/design/Ellipse 810.png";
+  static const String ellipse8 = "assets/design/Ellipse 811.png";
+  static const String ellipse9 = "assets/design/Ellipse 812.png";
 }

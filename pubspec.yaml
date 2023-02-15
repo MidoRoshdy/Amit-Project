@@ -72,11 +72,10 @@ flutter:
   assets:
     - assets/Logo/
     - assets/OnBoarding/
-    - assets/login&&create/
-    - assets/
-    - assets/login&&create/butten
-    - assets/login&&create/countries
-    - assets/login&&create/design
+    - assets/button/
+    - assets/countries/
+    - assets/design/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

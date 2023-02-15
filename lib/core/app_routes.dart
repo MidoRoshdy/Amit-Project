@@ -1,13 +1,19 @@
 import 'package:amit_project/screens/OnBoarding/OnBoarding.dart';
 import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
 import 'package:amit_project/screens/home/home.dart';
+import 'package:amit_project/screens/user_handel/create%20account/components/categories_screen.dart';
+import 'package:amit_project/screens/user_handel/create%20account/components/countries_screen.dart';
 import 'package:amit_project/screens/user_handel/create%20account/create_account.dart';
 import 'package:amit_project/screens/user_handel/login/Login.dart';
+import 'package:amit_project/screens/user_handel/reset%20password/components/email_sent_screen.dart';
+import 'package:amit_project/screens/user_handel/reset%20password/components/new_password_screen.dart';
+import 'package:amit_project/screens/user_handel/reset%20password/components/reset_success_screen.dart';
 import 'package:amit_project/screens/user_handel/reset%20password/reset_password.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/OnBoarding/components/page2.dart';
 import '../screens/OnBoarding/components/page3.dart';
+import '../screens/user_handel/create account/components/creation_success_screen.dart';
 
 class App_Routes {
   static const String splash = "/";
@@ -16,8 +22,15 @@ class App_Routes {
   static const String page2 = "OnBoarding_page2";
   static const String page3 = "OnBoarding_page3";
 //userhandel
+
   static const String login = "Login";
+
+  //create account and choose categories and countries
   static const String create_account = "create_account";
+  static const String categories = "categories";
+  static const String countries = "CountryChoice";
+  static const String createSuccessScreen = "creationSuccessScreen";
+//reset password and email send
   static const String reset_password = "reset_password";
   static const String emailSent = "emailSent";
   static const String chooseNewPass = "chooseNewPass";
@@ -25,7 +38,6 @@ class App_Routes {
 
   //homescreen
   static const String home = "home";
-  static const String categories = "categories";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -70,6 +82,36 @@ class App_Routes {
           builder: (context) {
             return const ResetPassword();
           },
+        );
+      case emailSent:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EmailSentScreen();
+          },
+        );
+      case resetSuccessScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ResetSuccessScreen();
+          },
+        );
+      case chooseNewPass:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const NewPasswordScreen();
+          },
+        );
+      case categories:
+        return MaterialPageRoute(
+          builder: (context) => const CategoriesScreen(),
+        );
+      case countries:
+        return MaterialPageRoute(
+          builder: (context) => const CountriesScreen(),
+        );
+      case createSuccessScreen:
+        return MaterialPageRoute(
+          builder: (context) => const CreationSuccessScreen(),
         );
       case home:
         return MaterialPageRoute(
