@@ -12,8 +12,8 @@ class Assets {
   static String OnBoarding2 = "assets/OnBoarding/page2.png";
   static String OnBoarding3 = "assets/OnBoarding/page3.png";
   //login&&create
-  static const String facebook = "assets/button/Property 1=Facebook.png";
-  static const String google = "assets/button/Property 1=Google.png";
+  static const String facebook = "assets/social/Property 1=Facebook.png";
+  static const String google = "assets/social/Property 1=Google.png";
   //! countries
   static const String argentina = "assets/countries/argentina.png";
   static const String brazil = "assets/countries/brazil.png";
@@ -35,4 +35,9 @@ class Assets {
   static const String ellipse7 = "assets/design/Ellipse 810.png";
   static const String ellipse8 = "assets/design/Ellipse 811.png";
   static const String ellipse9 = "assets/design/Ellipse 812.png";
+  //home
+  static const String DiscordLogo = "assets/social/Discord Logo.png";
+  static const String TwitterLogo = "assets/social/Discord Logo.png";
+  static const String ZoomLogo = "assets/social/Discord Logo.png";
+  static const String SlackLogo = "assets/social/Slack Logo.png";
 }

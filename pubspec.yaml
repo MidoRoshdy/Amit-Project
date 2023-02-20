@@ -72,7 +72,7 @@ flutter:
   assets:
     - assets/Logo/
     - assets/OnBoarding/
-    - assets/button/
+    - assets/social/
     - assets/countries/
     - assets/design/
 

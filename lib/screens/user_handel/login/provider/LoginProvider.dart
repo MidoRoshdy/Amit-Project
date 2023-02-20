@@ -2,6 +2,7 @@ import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/screens/user_handel/login/provider/LoginState.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginProvider extends ChangeNotifier {
   LoginState state = LoginState();
@@ -54,8 +55,14 @@ class LoginProvider extends ChangeNotifier {
         .pushNamedAndRemoveUntil(App_Routes.home, (route) => false);
   }
 
-  void onChangeRememberMe(bool? value) {
+  void onChangeRememberMe(bool? value) async {
     state.rememberMe = value!;
+
+    SharedPreferences SaveData = await SharedPreferences.getInstance();
+    SaveData.setString("username", state.usernameController.text);
+    SaveData.setString("password", state.passwordController.text);
+    print("success");
+
     notifyListeners();
   }
 
