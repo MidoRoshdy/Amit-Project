@@ -37,7 +37,7 @@ class Assets {
   static const String ellipse9 = "assets/design/Ellipse 812.png";
   //home
   static const String DiscordLogo = "assets/social/Discord Logo.png";
-  static const String TwitterLogo = "assets/social/Discord Logo.png";
+  static const String TwitterLogo = "aassets/social/Twitter Logo.png";
   static const String ZoomLogo = "assets/social/Discord Logo.png";
   static const String SlackLogo = "assets/social/Slack Logo.png";
 }
