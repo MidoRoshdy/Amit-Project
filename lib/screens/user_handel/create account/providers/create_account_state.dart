@@ -22,28 +22,20 @@ class CreateAccountState {
   bool hidePass = true;
 
   //! categories
-  Map<String, Map<String, dynamic>> categories = {
-    "uiDesigner": {
-      "icon": const Icon(Iconsax.bezier4),
-      "name": "UI/UX Designer"
-    },
-    "illustratorDesigner": {
-      "icon": const Icon(Iconsax.pen_tool4),
-      "name": "Illustrator Designer"
-    },
-    "developer": {"icon": const Icon(Iconsax.code4), "name": "Developer"},
-    "management": {"icon": const Icon(Iconsax.graph4), "name": "Management"},
-    "informationTechnology": {
+  List<Map<String, dynamic>> categories = [
+    {"icon": const Icon(Iconsax.bezier4), "name": "UI/UX Designer"},
+    {"icon": const Icon(Iconsax.pen_tool4), "name": "Illustrator Designer"},
+    {"icon": const Icon(Iconsax.code4), "name": "Developer"},
+    {"icon": const Icon(Iconsax.graph4), "name": "Management"},
+    {"icon": const Icon(Iconsax.graph4), "name": "Management"},
+    {
       "icon": const Icon(Iconsax.monitor_mobbile4),
       "name": "Information Technology"
     },
-    "research": {
-      "icon": const Icon(Iconsax.cloud_add4),
-      "name": "Research and Analytics"
-    },
-  };
+    {"icon": const Icon(Iconsax.cloud_add4), "name": "Research and Analytics"}
+  ];
 
-  Map<String, Map<String, dynamic>> selectedCategories = {};
+  List<Map<String, dynamic>> selectedCategories = [];
 
   //! countries
   Map<String, Map<String, dynamic>> countries = {

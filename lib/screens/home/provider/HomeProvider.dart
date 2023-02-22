@@ -44,6 +44,8 @@ class HomeProvider extends ChangeNotifier {
         return const saved();
       case ChosenNavigationItem.profile:
         return const Profile();
+      default:
+        return const SizedBox();
     }
   }
 }

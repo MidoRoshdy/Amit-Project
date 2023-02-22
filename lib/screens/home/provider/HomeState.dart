@@ -40,6 +40,7 @@ class HomeState {
         jobCategory: "Design",
         salary: "12K-15K")
   ];
+
   List<JobModel> recentJobs = [
     JobModel(
         name: "Senior UI Designer",

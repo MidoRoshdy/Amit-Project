@@ -5,78 +5,62 @@ import '../../../../core/colors.dart';
 import '../providers/create_account_provider.dart';
 
 // ignore: must_be_immutable
-class CategoryChoice extends StatefulWidget {
-  final int? index;
+class CategoryChoice extends StatelessWidget {
+  final Map<String, dynamic>? item;
 
-  const CategoryChoice({super.key, required this.index});
-
-  @override
-  State<CategoryChoice> createState() => _CategoryChoiceState();
-}
-
-class _CategoryChoiceState extends State<CategoryChoice> {
-  bool isTapped = false;
+  const CategoryChoice({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        context.read<CreateAccountProvider>().selectCategory(widget.index!);
-        setState(() {
-          isTapped = !isTapped;
-        });
-      },
-      child: Container(
-          padding: EdgeInsets.only(left: 10.sp, right: 0.sp),
-          height: 40.h,
-          width: 40.w,
-          decoration: BoxDecoration(
-              color: isTapped ? AppColours.primary100 : AppColours.neutral100,
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(
-                color: isTapped ? AppColours.primary500 : AppColours.neutral300,
-                width: 2.sp,
-              )),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                backgroundColor: AppColours.neutral300,
-                radius: 20.sp,
-                child: CircleAvatar(
-                  radius: 18.sp,
-                  backgroundColor: AppColours.neutral100,
-                  foregroundColor:
-                      isTapped ? AppColours.primary500 : AppColours.neutral300,
-                  child: context
-                      .read<CreateAccountProvider>()
-                      .state
-                      .categories
-                      .values
-                      .elementAt(widget.index!)
-                      .values
-                      .elementAt(0),
+    return Consumer<CreateAccountProvider>(builder: (context, provider, _) {
+      return InkWell(
+        onTap: () {
+          context.read<CreateAccountProvider>().selectCategory(item!);
+        },
+        child: Container(
+            padding: EdgeInsets.only(left: 10.sp, right: 0.sp),
+            height: 40.h,
+            width: 40.w,
+            decoration: BoxDecoration(
+                color: provider.state.selectedCategories.contains(item)
+                    ? AppColours.primary100
+                    : AppColours.neutral100,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: provider.state.selectedCategories.contains(item)
+                      ? AppColours.primary500
+                      : AppColours.neutral300,
+                  width: 2.sp,
+                )),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  backgroundColor: AppColours.neutral300,
+                  radius: 20.sp,
+                  child: CircleAvatar(
+                      radius: 18.sp,
+                      backgroundColor: AppColours.neutral100,
+                      foregroundColor:
+                          provider.state.selectedCategories.contains(item)
+                              ? AppColours.primary500
+                              : AppColours.neutral300,
+                      child: item!["icon"]),
                 ),
-              ),
-              Divider(
-                color: Colors.transparent,
-                height: 2.h,
-              ),
-              Text(
-                context
-                    .read<CreateAccountProvider>()
-                    .state
-                    .categories
-                    .values
-                    .elementAt(widget.index!)
-                    .values
-                    .elementAt(1),
-                style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
-              )
-            ],
-          )),
-    );
+                Divider(
+                  color: Colors.transparent,
+                  height: 2.h,
+                ),
+                Text(
+                  item!["name"],
+                  style:
+                      TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
+                )
+              ],
+            )),
+      );
+    });
   }
 }
 

@@ -16,9 +16,15 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
-            physics: const NeverScrollableScrollPhysics(),
-            controller: context.read<OnBoardingProvider>().state.pagecontroller,
-            children: pages));
+        body: Column(
+      children: [
+        Expanded(
+          child: PageView(
+              controller:
+                  context.read<OnBoardingProvider>().state.pagecontroller,
+              children: pages),
+        ),
+      ],
+    ));
   }
 }

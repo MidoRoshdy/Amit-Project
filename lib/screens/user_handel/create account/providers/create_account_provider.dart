@@ -66,16 +66,11 @@ class CreateAccountProvider extends ChangeNotifier {
 
   signInWithFacebook(BuildContext context) {}
 
-  void selectCategory(int index) {
-    if (!state.selectedCategories
-        .containsValue(state.categories.values.elementAt(index))) {
-      state.selectedCategories.addAll({
-        state.categories.keys.elementAt(index):
-            state.categories.values.elementAt(index)
-      });
+  void selectCategory(Map<String, dynamic> item) {
+    if (!state.selectedCategories.contains(item)) {
+      state.selectedCategories.add(item);
     } else {
-      state.selectedCategories
-          .remove(state.selectedCategories.keys.elementAt(index));
+      state.selectedCategories.remove(item);
     }
     notifyListeners();
   }

@@ -54,7 +54,11 @@ class CategoriesScreen extends StatelessWidget {
                 crossAxisSpacing: 3.w,
               ),
               itemBuilder: (context, index) {
-                return CategoryChoice(index: index);
+                final item = context
+                    .read<CreateAccountProvider>()
+                    .state
+                    .categories[index];
+                return CategoryChoice(item: item);
               },
               itemCount:
                   context.read<CreateAccountProvider>().state.categories.length,
