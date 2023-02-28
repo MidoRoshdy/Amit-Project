@@ -81,4 +81,9 @@ class HomeState {
 
   //! controllers
   final TextEditingController searchController = TextEditingController();
+
+  final PageController pageviewcontroller = PageController();
+
+  SelectedJobDetailsSection selectedJobDetailsSection =
+      SelectedJobDetailsSection.description;
 }

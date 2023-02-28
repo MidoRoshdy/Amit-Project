@@ -3,10 +3,13 @@ import 'package:amit_project/screens/home/provider/HomeState.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../core/enum.dart';
+import '../../Job/job details/components/Company.dart';
+import '../../Job/job details/components/Discrption.dart';
+import '../../Job/job details/components/People.dart';
 import '../components/Saved.dart';
 import '../components/applied.dart';
 import '../components/message.dart';
-import '../components/profile.dart';
+import '../components/profile/profile.dart';
 
 class HomeProvider extends ChangeNotifier {
   HomeState state = HomeState();
@@ -46,6 +49,17 @@ class HomeProvider extends ChangeNotifier {
         return const Profile();
       default:
         return const SizedBox();
+    }
+  }
+
+  Widget chosenJobDetailsSection() {
+    switch (state.selectedJobDetailsSection) {
+      case SelectedJobDetailsSection.description:
+        return const JopDiscription();
+      case SelectedJobDetailsSection.company:
+        return const JopCompany();
+      case SelectedJobDetailsSection.people:
+        return const JobPeople();
     }
   }
 }

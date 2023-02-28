@@ -29,7 +29,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
+  dotted_border: ^2.0.0+3
+  intl_phone_number_input: ^0.7.2
+  fading_edge_scrollview: ^3.0.0
   mounted_state: ^1.0.1
   shared_preferences: ^2.0.17
   email_validator: ^2.1.17
@@ -75,6 +77,7 @@ flutter:
     - assets/social/
     - assets/countries/
     - assets/design/
+    - assets/succsess/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

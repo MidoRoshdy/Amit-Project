@@ -61,6 +61,7 @@ class HomePage extends StatelessWidget {
                 color: Colors.transparent,
                 height: 2.h,
               ),
+              /////////////////////////search bar///////////////////////////////////
               Container(
                 decoration: BoxDecoration(
                     border:
@@ -83,6 +84,7 @@ class HomePage extends StatelessWidget {
                 color: Colors.transparent,
                 height: 2.h,
               ),
+              ////////////////////////////////////////////////Suggested Jobs/////////////////////////////////////
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -122,6 +124,7 @@ class HomePage extends StatelessWidget {
                 color: Colors.transparent,
                 height: 2.h,
               ),
+              ////////////////////////////////////recent job //////////////////////////////
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

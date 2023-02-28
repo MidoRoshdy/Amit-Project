@@ -1,3 +1,5 @@
+import 'package:amit_project/screens/Job/job%20applied/components/UploadPortfolio.dart';
+import 'package:amit_project/screens/Job/succsess%20job/succsessJob.dart';
 import 'package:amit_project/screens/OnBoarding/OnBoarding.dart';
 import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
 import 'package:amit_project/screens/home/home.dart';
@@ -11,8 +13,11 @@ import 'package:amit_project/screens/user_handel/reset%20password/components/res
 import 'package:amit_project/screens/user_handel/reset%20password/reset_password.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/Job/job applied/Jobapplied.dart';
+import '../screens/Job/job applied/components/TypeOfWork.dart';
 import '../screens/OnBoarding/components/page2.dart';
 import '../screens/OnBoarding/components/page3.dart';
+import '../screens/Job/job details/JobDetails.dart';
 import '../screens/user_handel/create account/components/creation_success_screen.dart';
 
 class App_Routes {
@@ -38,6 +43,11 @@ class App_Routes {
 
   //homescreen
   static const String home = "home";
+  static const String Jobdetails = "JobDetails";
+  static const String Jobapplied = "JobApplied";
+  static const String typeofwork = "TypeOfWork";
+  static const String uploadportfolio = "UploadPortfolio";
+  static const String succsessjob = "SuccsessJob";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -117,6 +127,36 @@ class App_Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const Home();
+          },
+        );
+      case Jobdetails:
+        return MaterialPageRoute(
+          builder: (context) {
+            return JobDetails();
+          },
+        );
+      case Jobapplied:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const JobApplied();
+          },
+        );
+      case typeofwork:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const TypeOfWork();
+          },
+        );
+      case uploadportfolio:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const UploadPortfolio();
+          },
+        );
+      case succsessjob:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const SuccsessJob();
           },
         );
 

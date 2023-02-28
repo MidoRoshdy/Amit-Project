@@ -40,4 +40,11 @@ class Assets {
   static const String TwitterLogo = "assets/social/Twitter Logo.png";
   static const String ZoomLogo = "assets/social/Discord Logo.png";
   static const String SlackLogo = "assets/social/Slack Logo.png";
+
+  static const String DiscordLogo2x = "assets/social/Discord Logo 2x.png";
+  static const String TwitterLogo2x = "assets/social/Twitter Logo 2x.png";
+  static const String ZoomLogo2x = "assets/social/Zoom Logo 2x.png";
+  static const String PDF = "assets/social/Logo.png";
+  //succsess job
+  static const String succsessjob = "assets/succsess/Data Ilustration.png";
 }

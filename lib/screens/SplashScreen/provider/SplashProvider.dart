@@ -1,9 +1,10 @@
-import 'package:amit_project/core/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:amit_project/screens/SplashScreen/provider/SplashState.dart';
 import 'package:amit_project/screens/user_handel/login/provider/LoginState.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../core/app_routes.dart';
 
 class SplashProvider extends ChangeNotifier {
   SplashState state = SplashState();
