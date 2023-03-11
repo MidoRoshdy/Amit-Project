@@ -47,4 +47,7 @@ class Assets {
   static const String PDF = "assets/social/Logo.png";
   //succsess job
   static const String succsessjob = "assets/succsess/Data Ilustration.png";
+  static const String succsesssaved = "assets/succsess/Saved Ilustration.png";
+  static const String notifications =
+      "assets/succsess/Notification Ilustration.png";
 }

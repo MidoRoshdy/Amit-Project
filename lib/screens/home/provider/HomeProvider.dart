@@ -6,7 +6,7 @@ import '../../../core/enum.dart';
 import '../../Job/job details/components/Company.dart';
 import '../../Job/job details/components/Discrption.dart';
 import '../../Job/job details/components/People.dart';
-import '../components/Saved.dart';
+import '../components/saved/Saved.dart';
 import '../components/applied.dart';
 import '../components/message.dart';
 import '../components/profile/profile.dart';

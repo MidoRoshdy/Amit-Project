@@ -1,3 +1,4 @@
+import 'package:amit_project/core/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
@@ -51,10 +52,13 @@ class HomePage extends StatelessWidget {
                         radius: 20.sp,
                         child: IconButton(
                             color: Colors.black,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed(App_Routes.notifications);
+                            },
                             icon: const Icon(Iconsax.notification4),
                             iconSize: 20.sp)),
-                  )
+                  ),
                 ],
               ),
               Divider(

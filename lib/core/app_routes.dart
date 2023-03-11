@@ -2,6 +2,10 @@ import 'package:amit_project/screens/Job/job%20applied/components/UploadPortfoli
 import 'package:amit_project/screens/Job/succsess%20job/succsessJob.dart';
 import 'package:amit_project/screens/OnBoarding/OnBoarding.dart';
 import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
+import 'package:amit_project/screens/home/components/Home_1.dart';
+import 'package:amit_project/screens/home/components/notifications/components/empty_notifications.dart';
+import 'package:amit_project/screens/home/components/notifications/notifications.dart';
+import 'package:amit_project/screens/home/components/saved/components/empty_save.dart';
 import 'package:amit_project/screens/home/home.dart';
 import 'package:amit_project/screens/user_handel/create%20account/components/categories_screen.dart';
 import 'package:amit_project/screens/user_handel/create%20account/components/countries_screen.dart';
@@ -43,11 +47,15 @@ class App_Routes {
 
   //homescreen
   static const String home = "home";
+  static const String homepage = "homepage";
   static const String Jobdetails = "JobDetails";
   static const String Jobapplied = "JobApplied";
   static const String typeofwork = "TypeOfWork";
   static const String uploadportfolio = "UploadPortfolio";
   static const String succsessjob = "SuccsessJob";
+  static const String emptysave = "emptysave";
+  static const String notifications = "notifications";
+  static const String emptynotifications = "emptynotifications";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -129,6 +137,12 @@ class App_Routes {
             return const Home();
           },
         );
+      case homepage:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const HomePage();
+          },
+        );
       case Jobdetails:
         return MaterialPageRoute(
           builder: (context) {
@@ -157,6 +171,24 @@ class App_Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const SuccsessJob();
+          },
+        );
+      case notifications:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Notifications();
+          },
+        );
+      case emptysave:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EmptySave();
+          },
+        );
+      case emptynotifications:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EmptyNotifications();
           },
         );
 
