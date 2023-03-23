@@ -29,6 +29,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  flutter_switch: ^0.3.2
   dotted_border: ^2.0.0+3
   intl_phone_number_input: ^0.7.2
   fading_edge_scrollview: ^3.0.0
@@ -78,6 +79,8 @@ flutter:
     - assets/countries/
     - assets/design/
     - assets/succsess/
+    - assets/profile/
+    - assets/langauge/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

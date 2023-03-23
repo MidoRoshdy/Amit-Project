@@ -17,7 +17,7 @@ class OnBoarding_page1 extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Column(children: [
-            //! background image
+            //////////////// background image
             Container(
               width: 100.w,
               height: 50.h,
@@ -30,7 +30,7 @@ class OnBoarding_page1 extends StatelessWidget {
               color: Colors.transparent,
               height: 4.h,
             ),
-            //! big text
+            ///////////// big text
             Container(
               alignment: Alignment.center,
               width: 90.w,
@@ -55,7 +55,7 @@ class OnBoarding_page1 extends StatelessWidget {
               color: Colors.transparent,
               height: 1.5.h,
             ),
-            //! small text
+            ///////////////////// small text
             Container(
               alignment: Alignment.center,
               width: 90.w,
@@ -70,7 +70,7 @@ class OnBoarding_page1 extends StatelessWidget {
               color: Colors.transparent,
               height: 4.h,
             ),
-            //! selected page
+            //////////////////////// selected page
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -107,7 +107,7 @@ class OnBoarding_page1 extends StatelessWidget {
               color: Colors.transparent,
               height: 5.h,
             ),
-            //! button
+            ///////////////////////////////button
             SizedBox(
               width: 90.w,
               height: 6.h,
@@ -135,14 +135,14 @@ class OnBoarding_page1 extends StatelessWidget {
               ),
             ),
           ]),
-          //! app logo
+          ////////// app logo
           Positioned(
               top: 6.5.h,
               left: 5.w,
               child: Image.asset(
                 Assets.MediumLogo1x,
               )),
-          //! skip button
+          //////////// skip button
           Positioned(
               top: 6.5.h,
               right: 5.w,

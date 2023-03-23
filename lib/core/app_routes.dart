@@ -5,6 +5,12 @@ import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
 import 'package:amit_project/screens/home/components/Home_1.dart';
 import 'package:amit_project/screens/home/components/notifications/components/empty_notifications.dart';
 import 'package:amit_project/screens/home/components/notifications/notifications.dart';
+import 'package:amit_project/screens/home/components/profile/components/editprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/langaugeprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/login&security/login&security.dart';
+import 'package:amit_project/screens/home/components/profile/components/notificationprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/portfolio.dart';
+import 'package:amit_project/screens/home/components/profile/profile.dart';
 import 'package:amit_project/screens/home/components/saved/components/empty_save.dart';
 import 'package:amit_project/screens/home/home.dart';
 import 'package:amit_project/screens/user_handel/create%20account/components/categories_screen.dart';
@@ -56,6 +62,13 @@ class App_Routes {
   static const String emptysave = "emptysave";
   static const String notifications = "notifications";
   static const String emptynotifications = "emptynotifications";
+  //profile
+  static const String profile = "Profile";
+  static const String editprofile = "EditProfile";
+  static const String portfolio = "Portfolio";
+  static const String langaugeprofile = "LangaugeProfile";
+  static const String notificationsprofile = "notificationsprofile";
+  static const String loginandsecurity = "loginandsecurity";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -189,6 +202,42 @@ class App_Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const EmptyNotifications();
+          },
+        );
+      case profile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Profile();
+          },
+        );
+      case editprofile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EditProfile();
+          },
+        );
+      case portfolio:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Portfolio();
+          },
+        );
+      case langaugeprofile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const LangaugeProfile();
+          },
+        );
+      case notificationsprofile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const NotificationsProfile();
+          },
+        );
+      case loginandsecurity:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const LoginAndSecurity();
           },
         );
 

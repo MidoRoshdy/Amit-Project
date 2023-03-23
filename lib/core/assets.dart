@@ -50,4 +50,17 @@ class Assets {
   static const String succsesssaved = "assets/succsess/Saved Ilustration.png";
   static const String notifications =
       "assets/succsess/Notification Ilustration.png";
+  static const String profilebackground = "assets/profile/Rectangle 1810.png";
+  static const String profilepic = "assets/profile/Profile.png";
+  //langauge
+  static const String lan_china = "assets/langauge/China.png";
+  static const String lan_england = "assets/langauge/England (1).png";
+  static const String lan_france = "assets/langauge/France.png";
+  static const String lan_germen = "assets/langauge/Germany.png";
+  static const String lan_indonesia = "assets/langauge/Indonesia.png";
+  static const String lan_japan = "assets/langauge/Japan (1).png";
+  static const String lan_netherland = "assets/langauge/Netherlands.png";
+  static const String lan_portugal = "assets/langauge/Portugal.png";
+  static const String lan_saudiarabia = "assets/langauge/Saudi Arabia.png";
+  static const String lan_southkorea = "assets/langauge/South Korea.png";
 }

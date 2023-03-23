@@ -303,7 +303,7 @@ class CreateAccount extends StatelessWidget {
                       color: Colors.transparent,
                       height: 2.h,
                     ),
-                    //! create account button
+                    //create account button
                     SizedBox(
                       width: 90.w,
                       height: 7.h,
@@ -380,7 +380,7 @@ class CreateAccount extends StatelessWidget {
                             height: 6.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(Assets.google),
                                   fit: BoxFit.fill),
                             ),
@@ -395,7 +395,7 @@ class CreateAccount extends StatelessWidget {
                             height: 6.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(Assets.facebook),
                                   fit: BoxFit.fill),
                             ),
