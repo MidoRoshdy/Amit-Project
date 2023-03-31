@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../../core/colors.dart';
+import '../../../../../../core/colors.dart';
 
 class LangaugeProfile extends StatefulWidget {
   const LangaugeProfile({super.key});

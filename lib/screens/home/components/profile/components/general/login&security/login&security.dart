@@ -1,3 +1,4 @@
+import 'package:amit_project/core/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sizer/sizer.dart';
@@ -65,76 +66,105 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                       alignment: Alignment.topLeft,
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Email address",
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w500),
-                              ),
-                              Icon(
-                                Iconsax.arrow_right_1,
-                                size: 25,
-                              ),
-                            ],
+                          //email adderss
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(App_Routes.emailaddress);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  "Email address",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Icon(
+                                  Iconsax.arrow_right_1,
+                                  size: 25,
+                                ),
+                              ],
+                            ),
                           ),
                           Divider(
                             height: 5.h,
                             color: Colors.grey[350],
                           ),
                           //Phone number
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Phone number",
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w500),
-                              ),
-                              Icon(
-                                Iconsax.arrow_right_1,
-                                size: 25,
-                              ),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(App_Routes.phonenumber);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  "Phone number",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Icon(
+                                  Iconsax.arrow_right_1,
+                                  size: 25,
+                                ),
+                              ],
+                            ),
                           ),
                           Divider(
                             height: 5.h,
                             color: Colors.grey[350],
                           ),
                           //Change password
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Change password",
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w500),
-                              ),
-                              Icon(
-                                Iconsax.arrow_right_1,
-                                size: 25,
-                              ),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(App_Routes.changepassword);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  "Change password",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Icon(
+                                  Iconsax.arrow_right_1,
+                                  size: 25,
+                                ),
+                              ],
+                            ),
                           ),
                           Divider(
                             height: 5.h,
                             color: Colors.grey[350],
                           ),
                           //Two-step verification
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Two-step verification",
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w500),
-                              ),
-                              Icon(
-                                Iconsax.arrow_right_1,
-                                size: 25,
-                              ),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context)
+                                  .pushNamed(App_Routes.verfication);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  "Two-step verification",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Icon(
+                                  Iconsax.arrow_right_1,
+                                  size: 25,
+                                ),
+                              ],
+                            ),
                           ),
                           Divider(
                             height: 5.h,

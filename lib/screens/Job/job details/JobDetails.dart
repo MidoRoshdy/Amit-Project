@@ -183,6 +183,7 @@ class _JobDetails extends State<JobDetails> {
                                         SelectedJobDetailsSection.description
                                     ? AppColours.information900
                                     : null),
+                            //Description
                             child: Text(
                               "Description",
                               style: TextStyle(
@@ -219,6 +220,7 @@ class _JobDetails extends State<JobDetails> {
                                         SelectedJobDetailsSection.company
                                     ? AppColours.information900
                                     : null),
+                            //company
                             child: Text(
                               "Company",
                               style: TextStyle(
@@ -255,6 +257,7 @@ class _JobDetails extends State<JobDetails> {
                                         SelectedJobDetailsSection.people
                                     ? AppColours.information900
                                     : null),
+                            //people
                             child: Text(
                               "People",
                               style: TextStyle(

@@ -86,4 +86,7 @@ class HomeState {
 
   SelectedJobDetailsSection selectedJobDetailsSection =
       SelectedJobDetailsSection.description;
+
+  SelectedJobAppliedSection selectedAppliedSection =
+      SelectedJobAppliedSection.Active;
 }

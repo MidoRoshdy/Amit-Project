@@ -1,3 +1,5 @@
+import 'package:amit_project/screens/home/components/Applied/components/active.dart';
+import 'package:amit_project/screens/home/components/Applied/components/rejected.dart';
 import 'package:amit_project/screens/home/components/Home_1.dart';
 import 'package:amit_project/screens/home/provider/HomeState.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,7 +9,7 @@ import '../../Job/job details/components/Company.dart';
 import '../../Job/job details/components/Discrption.dart';
 import '../../Job/job details/components/People.dart';
 import '../components/saved/Saved.dart';
-import '../components/applied.dart';
+import '../components/Applied/applied.dart';
 import '../components/message.dart';
 import '../components/profile/profile.dart';
 
@@ -60,6 +62,15 @@ class HomeProvider extends ChangeNotifier {
         return const JopCompany();
       case SelectedJobDetailsSection.people:
         return const JobPeople();
+    }
+  }
+
+  Widget chosenJobAppliedSection() {
+    switch (state.selectedAppliedSection) {
+      case SelectedJobAppliedSection.Active:
+        return const ActiveJob();
+      case SelectedJobAppliedSection.Rejected:
+        return const RejectedJob();
     }
   }
 }

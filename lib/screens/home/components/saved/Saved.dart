@@ -25,7 +25,8 @@ class saved extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop(App_Routes.home);
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                            App_Routes.home, (route) => false);
                       },
                       icon: const Icon(Iconsax.arrow_left4)),
                   SizedBox(

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../../core/assets.dart';
-import '../../../../../core/colors.dart';
+import '../../../../../../core/assets.dart';
+import '../../../../../../core/colors.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});

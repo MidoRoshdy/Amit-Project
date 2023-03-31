@@ -36,7 +36,8 @@ class Profile extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Navigator.of(context).pop();
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              App_Routes.home, (route) => false);
                         },
                         icon: const Icon(Iconsax.arrow_left4)),
                     Text("profile",
@@ -403,40 +404,58 @@ class Profile extends StatelessWidget {
                         height: 2.h,
                       ),
                       //Help Center
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("Help Center",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500)),
-                          Icon(Iconsax.arrow_right_1)
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(App_Routes.helpcenter);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Help Center",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500)),
+                            Icon(Iconsax.arrow_right_1)
+                          ],
+                        ),
                       ),
                       Divider(
                         height: 2.h,
                       ),
                       //Terms & Conditions
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("Terms & Conditions",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500)),
-                          Icon(Iconsax.arrow_right_1)
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(App_Routes.termsandconditions);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Terms & Conditions",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500)),
+                            Icon(Iconsax.arrow_right_1)
+                          ],
+                        ),
                       ),
                       Divider(
                         height: 2.h,
                       ),
                       //Privacy Policy
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          Text("Privacy Policy",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500)),
-                          Icon(Iconsax.arrow_right_1)
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(App_Routes.privacypolicy);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Privacy Policy",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500)),
+                            Icon(Iconsax.arrow_right_1)
+                          ],
+                        ),
                       ),
                     ]),
                   ),

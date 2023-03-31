@@ -7,7 +7,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../Job/job applied/provider/JobAppliedProvider.dart';
+import '../../../../../Job/job applied/provider/JobAppliedProvider.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});

@@ -2,14 +2,26 @@ import 'package:amit_project/screens/Job/job%20applied/components/UploadPortfoli
 import 'package:amit_project/screens/Job/succsess%20job/succsessJob.dart';
 import 'package:amit_project/screens/OnBoarding/OnBoarding.dart';
 import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
+import 'package:amit_project/screens/home/components/Applied/components/active.dart';
+import 'package:amit_project/screens/home/components/Applied/components/rejected.dart';
 import 'package:amit_project/screens/home/components/Home_1.dart';
 import 'package:amit_project/screens/home/components/notifications/components/empty_notifications.dart';
 import 'package:amit_project/screens/home/components/notifications/notifications.dart';
-import 'package:amit_project/screens/home/components/profile/components/editprofile.dart';
-import 'package:amit_project/screens/home/components/profile/components/langaugeprofile.dart';
-import 'package:amit_project/screens/home/components/profile/components/login&security/login&security.dart';
-import 'package:amit_project/screens/home/components/profile/components/notificationprofile.dart';
-import 'package:amit_project/screens/home/components/profile/components/portfolio.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/editprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/langaugeprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/changepassword.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/emailaddress.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/phonenumber.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/verfications/components/verfi_page2.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/verfications/components/verfi_page3.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/verfications/components/verfi_page4.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/verfications/verfication.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/login&security/login&security.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/notificationprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/general/portfolio.dart';
+import 'package:amit_project/screens/home/components/profile/components/others/helpcenter.dart';
+import 'package:amit_project/screens/home/components/profile/components/others/privacypolicy.dart';
+import 'package:amit_project/screens/home/components/profile/components/others/termsandconditions.dart';
 import 'package:amit_project/screens/home/components/profile/profile.dart';
 import 'package:amit_project/screens/home/components/saved/components/empty_save.dart';
 import 'package:amit_project/screens/home/home.dart';
@@ -64,11 +76,27 @@ class App_Routes {
   static const String emptynotifications = "emptynotifications";
   //profile
   static const String profile = "Profile";
+  //General
   static const String editprofile = "EditProfile";
   static const String portfolio = "Portfolio";
   static const String langaugeprofile = "LangaugeProfile";
   static const String notificationsprofile = "notificationsprofile";
   static const String loginandsecurity = "loginandsecurity";
+  //Login And Security
+  static const String emailaddress = "emailaddress";
+  static const String phonenumber = "phonenumber";
+  static const String changepassword = "changepassword";
+  static const String verfication = "verfication";
+  static const String veri_page2 = "veri_page2";
+  static const String veri_page3 = "veri_page3";
+  static const String veri_page4 = "veri_page4";
+  //others
+  static const String helpcenter = "helpcenter";
+  static const String privacypolicy = "privacypolicy";
+  static const String termsandconditions = "termsandconditions";
+  //applied job
+  static const String activejob = "activejob";
+  static const String rejectedjob = "rejectedjob";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -240,6 +268,78 @@ class App_Routes {
             return const LoginAndSecurity();
           },
         );
+      case emailaddress:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EmailAddress();
+          },
+        );
+      case phonenumber:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const PhoneNumber();
+          },
+        );
+      case changepassword:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ChangePassword();
+          },
+        );
+      case verfication:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const TwoStepVerficaton();
+          },
+        );
+      case veri_page2:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const VerificationPage2();
+          },
+        );
+      case veri_page3:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const VerificationPage3();
+          },
+        );
+      case veri_page4:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const VerificationPage4();
+          },
+        );
+      case helpcenter:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const HelpCenter();
+          },
+        );
+      case privacypolicy:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const PrivacyPolicy();
+          },
+        );
+      case termsandconditions:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const TermsAndConditions();
+          },
+        );
+      case activejob:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ActiveJob();
+          },
+        );
+      case rejectedjob:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const RejectedJob();
+          },
+        );
 
       default:
         return MaterialPageRoute(
@@ -255,29 +355,27 @@ class App_Routes {
   }
 }
 
-
-
-      // case register:
-      //   return MaterialPageRoute(
-      //     builder: (context) {
-      //       return const Register();
-      //     },
-      //   );
-      // case stream:
-      //   return MaterialPageRoute(
-      //     builder: (context) {
-      //       return const Stream();
-      //     },
-      //   );
-      // case notes:
-      //   return MaterialPageRoute(
-      //     builder: (context) {
-      //       return const Notes();
-      //     },
-      //   );
-      // case addnote:
-      //   return MaterialPageRoute(
-      //     builder: (context) {
-      //       return AddNote();
-      //     },
-      //   );
+// case register:
+//   return MaterialPageRoute(
+//     builder: (context) {
+//       return const Register();
+//     },
+//   );
+// case stream:
+//   return MaterialPageRoute(
+//     builder: (context) {
+//       return const Stream();
+//     },
+//   );
+// case notes:
+//   return MaterialPageRoute(
+//     builder: (context) {
+//       return const Notes();
+//     },
+//   );
+// case addnote:
+//   return MaterialPageRoute(
+//     builder: (context) {
+//       return AddNote();
+//     },
+//   );
