@@ -18,4 +18,8 @@ class ProfileProvider extends ChangeNotifier {
     notifyListeners();
     print("removed");
   }
+
+  void onChangeRememberMe(bool? value) async {
+    state.checkbox = value!;
+  }
 }

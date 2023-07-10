@@ -68,22 +68,19 @@ class Login extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5),
                         border: Border.all(
                             width: 1.sp,
-                            color:
-                                context.watch<LoginProvider>().state.username ==
+                            color: context.watch<LoginProvider>().state.email ==
+                                    null
+                                ? AppColours.neutral300
+                                : context
+                                            .watch<LoginProvider>()
+                                            .state
+                                            .usernameErrorMessage !=
                                         null
-                                    ? AppColours.neutral300
-                                    : context
-                                                .watch<LoginProvider>()
-                                                .state
-                                                .usernameErrorMessage !=
-                                            null
-                                        ? AppColours.danger500
-                                        : AppColours.primary500)),
+                                    ? AppColours.danger500
+                                    : AppColours.primary500)),
                     child: TextField(
-                      controller: context
-                          .read<LoginProvider>()
-                          .state
-                          .usernameController,
+                      controller:
+                          context.read<LoginProvider>().state.emailController,
                       onChanged: context.read<LoginProvider>().onUsernameChange,
                       onSubmitted:
                           context.read<LoginProvider>().onUsernameChange,
@@ -95,8 +92,7 @@ class Login extends StatelessWidget {
                           Iconsax.user,
                         ),
                         prefixIconColor:
-                            context.watch<LoginProvider>().state.username ==
-                                    null
+                            context.watch<LoginProvider>().state.email == null
                                 ? AppColours.neutral300
                                 : context
                                             .watch<LoginProvider>()
@@ -248,10 +244,29 @@ class Login extends StatelessWidget {
                     width: 90.w,
                     height: 7.h,
                     child: ElevatedButton(
-                      onPressed: () {
-                        context.read<LoginProvider>().validate() == true
-                            ? context.read<LoginProvider>().logIn(context)
-                            : null;
+                      onPressed: () async {
+                        if (await context.read<LoginProvider>().loginapi() ==
+                            true) {
+                          context.read<LoginProvider>().logIn(context);
+                        } else {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: const Text("Error"),
+                                content:
+                                    const Text("Invalid username or password"),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text("Ok"))
+                                ],
+                              );
+                            },
+                          );
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor:

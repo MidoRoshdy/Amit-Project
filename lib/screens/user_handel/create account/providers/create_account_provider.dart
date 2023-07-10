@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/screens/user_handel/create%20account/providers/create_account_state.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../core/api_routes.dart';
 
 class CreateAccountProvider extends ChangeNotifier {
   CreateAccountState state = CreateAccountState();
@@ -31,7 +36,7 @@ class CreateAccountProvider extends ChangeNotifier {
     value.isEmpty
         ? state.usernameErrorMessage = "You must enter a username"
         : state.usernameErrorMessage = null;
-    state.username = value;
+    state.name = value;
     notifyListeners();
   }
 
@@ -46,7 +51,7 @@ class CreateAccountProvider extends ChangeNotifier {
 
   createAccount(BuildContext context) {
     Navigator.of(context)
-        .pushNamedAndRemoveUntil(App_Routes.home, (route) => false);
+        .pushNamedAndRemoveUntil(App_Routes.login, (route) => false);
   }
 
   bool validate() {
@@ -55,7 +60,7 @@ class CreateAccountProvider extends ChangeNotifier {
         state.usernameErrorMessage == null &&
         state.email != null &&
         state.password != null &&
-        state.username != null) {
+        state.name != null) {
       return true;
     } else {
       return false;
@@ -87,5 +92,49 @@ class CreateAccountProvider extends ChangeNotifier {
           .remove(state.selectedCountries.keys.elementAt(index));
     }
     notifyListeners();
+  }
+
+/////////register api///////////
+  registerapi() async {
+    var response = await http.post(Uri.parse(ApiRoutes.registerUrl), body: {
+      "name": state.usernameController.text,
+      "email": state.emailController.text,
+      "password": state.passwordController.text,
+    });
+    if (response.statusCode == 200) {
+      var jsonresponse = jsonDecode(response.body);
+      Map<String, dynamic> RegisterDataList =
+          Map<String, dynamic>.from(jsonresponse);
+
+      print(response.statusCode);
+      return true;
+    } else {
+      print(response.statusCode);
+    }
+    notifyListeners();
+  }
+
+  Future<void> setUserData(
+    token,
+    usernameValue,
+    emailValue,
+    passwordValue,
+    updatedAtValue,
+    createdAtValue,
+    otpValue,
+    idValue,
+  ) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    sharedPreferences.setString("token", '$token');
+    sharedPreferences.setString("usernameValue", '$usernameValue');
+    sharedPreferences.setString("emailValue", '$emailValue');
+    sharedPreferences.setString("passwordValue", '$passwordValue');
+    sharedPreferences.setString("updated_atValue", '$updatedAtValue');
+    sharedPreferences.setString("created_atValue", '$createdAtValue');
+    sharedPreferences.setString("idValue", '$idValue');
+    sharedPreferences.setString("otpValue", '$otpValue');
+
+    print("token is $token");
   }
 }

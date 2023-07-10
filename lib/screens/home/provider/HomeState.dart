@@ -1,81 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../Data/Models/job_model.dart';
-import '../../../core/assets.dart';
+import '../../../Data/Models/suggestedjob_model.dart';
 import '../../../core/enum.dart';
 
 class HomeState {
-  //! jobs
-  List<JobModel> suggestedJobs = [
-    JobModel(
-        name: "Product Designer",
-        company: CompanyModel(
-            name: "Zoom", location: "United States", image: Assets.ZoomLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Design",
-        salary: "12K-15K"),
-    JobModel(
-        name: "Product Designer",
-        company: CompanyModel(
-            name: "Stack", location: "United States", image: Assets.SlackLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Design",
-        salary: "12K-15K"),
-    JobModel(
-        name: "Product Designer",
-        company: CompanyModel(
-            name: "Zoom", location: "United States", image: Assets.ZoomLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Design",
-        salary: "12K-15K"),
-    JobModel(
-        name: "Product Designer",
-        company: CompanyModel(
-            name: "Stack", location: "United States", image: Assets.SlackLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Design",
-        salary: "12K-15K")
-  ];
-
-  List<JobModel> recentJobs = [
-    JobModel(
-        name: "Senior UI Designer",
-        company: CompanyModel(
-            name: "Twitter", location: "Jakarta", image: Assets.TwitterLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Senior",
-        salary: "15K"),
-    JobModel(
-        name: "Senior UX Designer",
-        company: CompanyModel(
-            name: "Discord", location: "Jakarta", image: Assets.DiscordLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Senior",
-        salary: "15K"),
-    JobModel(
-        name: "Senior UI Designer",
-        company: CompanyModel(
-            name: "Twitter", location: "Jakarta", image: Assets.TwitterLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Senior",
-        salary: "15K"),
-    JobModel(
-        name: "Senior UX Designer",
-        company: CompanyModel(
-            name: "Discord", location: "Jakarta", image: Assets.DiscordLogo),
-        jobTime: "Fulltime",
-        jobType: "Remote",
-        jobCategory: "Senior",
-        salary: "15K")
-  ];
-
   //! enum navigation
   ChosenNavigationItem chosenNavigationItem = ChosenNavigationItem.home;
 
@@ -89,4 +17,29 @@ class HomeState {
 
   SelectedJobAppliedSection selectedAppliedSection =
       SelectedJobAppliedSection.Active;
+  ScreenStates states = ScreenStates.init;
+
+  //! variables
+  late List<bool?> iconSuggest;
+  late List<bool?> iconRecent;
+
+  String result = "";
+  bool isReset = false;
+  bool isSelected = false;
+  dynamic chosenItem;
+  dynamic username;
+  List<SugestModel?>? suggest;
+  List<Map> suggested = [];
+  List<Map> jobs = [];
+  List<Map> favorites = [];
+  List<Map> searchFilter = [];
+  List<String> searchList = [];
+  List<String> history = [];
+  List<String> suggestions = [
+    "UI/UX Designer",
+    "Project Manager",
+    "Product Designer",
+    "UX Designer",
+    "Front-End Developer"
+  ];
 }

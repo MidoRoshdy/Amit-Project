@@ -3,8 +3,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../core/colors.dart';
-import '../provider/HomeProvider.dart';
+import '../../../../core/colors.dart';
+import '../../provider/HomeProvider.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

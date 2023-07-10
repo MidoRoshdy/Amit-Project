@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/enum.dart';
+
 class LoginState {
+  ScreenStates states = ScreenStates.init;
   //! vars
-  String? username;
+  String? email;
   String? password;
+  String? token;
 
   //! controllers
-  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
   //! errors

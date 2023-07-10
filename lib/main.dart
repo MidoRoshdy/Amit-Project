@@ -2,6 +2,7 @@ import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/screens/Job/job%20applied/provider/JobAppliedProvider.dart';
 import 'package:amit_project/screens/OnBoarding/provider/OnBoardingProvider.dart';
 import 'package:amit_project/screens/SplashScreen/provider/SplashProvider.dart';
+import 'package:amit_project/screens/home/components/message/provider/messageprovider.dart';
 import 'package:amit_project/screens/home/components/profile/provider/profileprovider.dart';
 import 'package:amit_project/screens/home/provider/HomeProvider.dart';
 import 'package:amit_project/screens/user_handel/create%20account/providers/create_account_provider.dart';
@@ -31,10 +32,12 @@ class MyApp extends StatelessWidget {
               create: (_) => ResetPasswordProvider()),
           ListenableProvider<CreateAccountProvider>(
               create: (_) => CreateAccountProvider()),
-          ListenableProvider<HomeProvider>(create: (_) => HomeProvider()),
+          ListenableProvider<HomeProvider>(
+              create: (_) => HomeProvider()..init()),
           ListenableProvider<JobAppliedProvider>(
               create: (_) => JobAppliedProvider()),
           ListenableProvider<ProfileProvider>(create: (_) => ProfileProvider()),
+          ListenableProvider<MessageProvier>(create: (_) => MessageProvier()),
         ],
         child: MaterialApp(
           title: "Job Finder",

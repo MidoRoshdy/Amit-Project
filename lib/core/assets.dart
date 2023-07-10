@@ -63,4 +63,8 @@ class Assets {
   static const String lan_portugal = "assets/langauge/Portugal.png";
   static const String lan_saudiarabia = "assets/langauge/Saudi Arabia.png";
   static const String lan_southkorea = "assets/langauge/South Korea.png";
+  //applied job
+  static const String reject = "assets/applied/Data Ilustration (1).png";
+  //message
+  static const String empty_message = "assets/message/Data Ilustration.png";
 }

@@ -457,6 +457,25 @@ class Profile extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Divider(
+                        height: 2.h,
+                      ),
+                      //complete profile
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(App_Routes.completeprofile);
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Complete Profile",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500)),
+                            Icon(Iconsax.arrow_right_1)
+                          ],
+                        ),
+                      ),
                     ]),
                   ),
                 ),

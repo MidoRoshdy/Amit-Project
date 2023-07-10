@@ -2,7 +2,7 @@ import 'package:amit_project/screens/home/provider/HomeProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'components/bottom_nav_bar.dart';
+import 'components/bottom_nav_bar/bottom_nav_bar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

@@ -14,7 +14,7 @@ class SplashProvider extends ChangeNotifier {
     SharedPreferences SavedData = await SharedPreferences.getInstance();
     var obtainedusername = SavedData.getString("username");
     var obtainedpassword = SavedData.getString("password");
-    if (obtainedusername == states.usernameController &&
+    if (obtainedusername == states.emailController &&
         obtainedpassword == states.passwordController) {
       Navigator.of(context).pushNamed(App_Routes.home);
     } else {

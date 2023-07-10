@@ -139,24 +139,6 @@ class _AppliedState extends State<Applied> {
                 height: 2.h,
                 color: Colors.transparent,
               ),
-              Container(
-                width: double.infinity,
-                color: AppColours.neutral200,
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      Text(
-                        "3 Jobs",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            color: AppColours.neutral500),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               Expanded(
                   child: FadingEdgeScrollView.fromSingleChildScrollView(
                       gradientFractionOnEnd: 0.6,

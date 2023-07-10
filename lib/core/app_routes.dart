@@ -4,9 +4,15 @@ import 'package:amit_project/screens/OnBoarding/OnBoarding.dart';
 import 'package:amit_project/screens/SplashScreen/SplashScreen.dart';
 import 'package:amit_project/screens/home/components/Applied/components/active.dart';
 import 'package:amit_project/screens/home/components/Applied/components/rejected.dart';
-import 'package:amit_project/screens/home/components/Home_1.dart';
+import 'package:amit_project/screens/home/components/home1/Home_1.dart';
+import 'package:amit_project/screens/home/components/message/components/sendmessage.dart';
+import 'package:amit_project/screens/home/components/message/message.dart';
 import 'package:amit_project/screens/home/components/notifications/components/empty_notifications.dart';
 import 'package:amit_project/screens/home/components/notifications/notifications.dart';
+import 'package:amit_project/screens/home/components/profile/components/complete%20profile/completeprofile.dart';
+import 'package:amit_project/screens/home/components/profile/components/complete%20profile/components/education.dart';
+import 'package:amit_project/screens/home/components/profile/components/complete%20profile/components/experience.dart';
+import 'package:amit_project/screens/home/components/profile/components/complete%20profile/components/personaldetails.dart';
 import 'package:amit_project/screens/home/components/profile/components/general/editprofile.dart';
 import 'package:amit_project/screens/home/components/profile/components/general/langaugeprofile.dart';
 import 'package:amit_project/screens/home/components/profile/components/general/login&security/components/changepassword.dart';
@@ -97,6 +103,14 @@ class App_Routes {
   //applied job
   static const String activejob = "activejob";
   static const String rejectedjob = "rejectedjob";
+  //complete profile
+  static const String completeprofile = "completeprofile";
+  static const String personaldetails = "personaldetails";
+  static const String education = "education";
+  static const String experience = "experience";
+  //meassege
+  static const String messages = "messages";
+  static const String sendmassege = "SendMassege";
 
   static Route<dynamic> onGenerateRoute(RouteSettings setting) {
     switch (setting.name) {
@@ -338,6 +352,42 @@ class App_Routes {
         return MaterialPageRoute(
           builder: (context) {
             return const RejectedJob();
+          },
+        );
+      case completeprofile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const CompleteProfile();
+          },
+        );
+      case personaldetails:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const PersonalDetails();
+          },
+        );
+      case education:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Education();
+          },
+        );
+      case experience:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Experience();
+          },
+        );
+      case messages:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const Messages();
+          },
+        );
+      case sendmassege:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const SendMassege();
           },
         );
 

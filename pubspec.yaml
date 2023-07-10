@@ -29,6 +29,10 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
+  http: ^0.13.5
+  datetime_picker_formfield_new: ^2.1.0
+  percent_indicator: ^4.2.3
   flutter_switch: ^0.3.2
   dotted_border: ^2.0.0+3
   intl_phone_number_input: ^0.7.2
@@ -40,7 +44,10 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   google_fonts: ^4.0.3
   sizer: ^2.0.15
+  timeago: ^3.4.0
+  grouped_list: ^5.1.2
   provider: ^6.0.5
+  file_picker: 5.2.4
   flutter:
     sdk: flutter
 
@@ -81,6 +88,8 @@ flutter:
     - assets/succsess/
     - assets/profile/
     - assets/langauge/
+    - assets/applied/
+    - assets/message/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

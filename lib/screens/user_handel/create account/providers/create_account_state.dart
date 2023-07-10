@@ -2,9 +2,11 @@ import 'package:amit_project/core/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../core/enum.dart';
+
 class CreateAccountState {
   //! vars
-  String? username;
+  String? name;
   String? email;
   String? password;
 
@@ -55,4 +57,6 @@ class CreateAccountState {
   };
 
   Map<String, Map<String, dynamic>> selectedCountries = {};
+
+  ScreenStates states = ScreenStates.init;
 }

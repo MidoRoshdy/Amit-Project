@@ -1,4 +1,3 @@
-import 'package:amit_project/Data/Models/job_model.dart';
 import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/core/assets.dart';
 import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
@@ -19,7 +18,6 @@ class JobDetails extends StatefulWidget {
 }
 
 class _JobDetails extends State<JobDetails> {
-  List<JobModel>? item;
   bool saved = false;
   ScrollController scrollController = ScrollController();
   @override

@@ -1,1 +1,3 @@
-class ProfileState {}
+class ProfileState {
+  bool checkbox = false;
+}

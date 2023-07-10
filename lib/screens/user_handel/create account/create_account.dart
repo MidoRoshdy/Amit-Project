@@ -84,7 +84,7 @@ class CreateAccount extends StatelessWidget {
                               color: context
                                           .watch<CreateAccountProvider>()
                                           .state
-                                          .username ==
+                                          .name ==
                                       null
                                   ? AppColours.neutral300
                                   : context
@@ -115,7 +115,7 @@ class CreateAccount extends StatelessWidget {
                           prefixIconColor: context
                                       .watch<CreateAccountProvider>()
                                       .state
-                                      .username ==
+                                      .name ==
                                   null
                               ? AppColours.neutral300
                               : context
@@ -308,12 +308,32 @@ class CreateAccount extends StatelessWidget {
                       width: 90.w,
                       height: 7.h,
                       child: ElevatedButton(
-                        onPressed: () {
-                          context.read<CreateAccountProvider>().validate() ==
-                                  true
-                              ? Navigator.of(context)
-                                  .pushNamed(App_Routes.categories)
-                              : null;
+                        onPressed: () async {
+                          if (await context
+                                  .read<CreateAccountProvider>()
+                                  .registerapi() ==
+                              true) {
+                            Navigator.of(context)
+                                .pushNamed(App_Routes.categories);
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text("Error"),
+                                  content: const Text(
+                                      "Invalid username or password"),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("Ok"))
+                                  ],
+                                );
+                              },
+                            );
+                          }
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: context
