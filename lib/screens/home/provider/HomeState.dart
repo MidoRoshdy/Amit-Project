@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../Data/Models/suggestedjob_model.dart';
+import '../../../Data/Models/jobs/suggestedjob_model.dart';
 import '../../../core/enum.dart';
 
 class HomeState {
@@ -42,4 +42,12 @@ class HomeState {
     "UX Designer",
     "Front-End Developer"
   ];
+  //! navigation index
+  int navigationIndex = 0;
+
+  LoadingState loadingState = LoadingState.initial;
+
+  // late User profile;
+
+  LoadingState savedLoadingState = LoadingState.initial;
 }

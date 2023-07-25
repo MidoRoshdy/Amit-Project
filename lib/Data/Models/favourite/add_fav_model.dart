@@ -1,22 +1,28 @@
+// To parse this JSON data, do
+//
+//     final addFavoriteResponseModel = addFavoriteResponseModelFromJson(jsonString);
+
 import 'dart:convert';
 
-AddFavModel addFavModelFromJson(String str) =>
-    AddFavModel.fromJson(json.decode(str));
+AddFavoriteResponseModel addFavoriteResponseModelFromJson(String str) =>
+    AddFavoriteResponseModel.fromJson(json.decode(str));
 
-String addFavModelToJson(AddFavModel data) => json.encode(data.toJson());
+String addFavoriteResponseModelToJson(AddFavoriteResponseModel data) =>
+    json.encode(data.toJson());
 
-class AddFavModel {
+class AddFavoriteResponseModel {
   bool status;
-  Data data;
+  DataF data;
 
-  AddFavModel({
+  AddFavoriteResponseModel({
     required this.status,
     required this.data,
   });
 
-  factory AddFavModel.fromJson(Map<String, dynamic> json) => AddFavModel(
+  factory AddFavoriteResponseModel.fromJson(Map<String, dynamic> json) =>
+      AddFavoriteResponseModel(
         status: json["status"],
-        data: Data.fromJson(json["data"]),
+        data: DataF.fromJson(json["data"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -25,7 +31,11 @@ class AddFavModel {
       };
 }
 
-class Data {
+DataF savedFromJson(String str) => DataF.fromJson(json.decode(str));
+
+String savedToJson(DataF data) => json.encode(data.toJson());
+
+class DataF {
   String userId;
   String jobId;
   bool like;
@@ -36,7 +46,7 @@ class Data {
   DateTime createdAt;
   int id;
 
-  Data({
+  DataF({
     required this.userId,
     required this.jobId,
     required this.like,
@@ -48,7 +58,7 @@ class Data {
     required this.id,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
+  factory DataF.fromJson(Map<String, dynamic> json) => DataF(
         userId: json["user_id"],
         jobId: json["job_id"],
         like: json["like"],

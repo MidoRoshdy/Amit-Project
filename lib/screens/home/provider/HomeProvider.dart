@@ -234,4 +234,40 @@ class HomeProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> fetchSavedData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String? token = sharedPreferences.getString("token");
+    print("token: $token");
+
+    final response = await http.get(Uri.parse(ApiRoutes.getFavorite),
+        headers: {'Authorization': 'Bearer $token'});
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      Map<String, dynamic> SavedList = Map<String, dynamic>.from(data);
+
+      List<Map> newSaved = [];
+
+      for (int i = 0; i < SavedList.length; i++) {
+        newSaved.add(SavedList["data"][i]);
+      }
+      state.suggested = newSaved;
+      notifyListeners();
+    }
+  }
+
+  Future<void> logout(BuildContext context) async {
+    SharedPreferences shared = await SharedPreferences.getInstance();
+    shared.clear();
+    shared.setBool("registered", true);
+    shared.setBool("onBoard", true);
+    Restart.restartApp();
+  }
+
+  void returnHome() {
+    state.chosenNavigationItem = ChosenNavigationItem.home;
+    state.navigationIndex = 0;
+    notifyListeners();
+  }
 }
