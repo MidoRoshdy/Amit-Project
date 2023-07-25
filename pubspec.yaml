@@ -30,7 +30,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
 
-  restart_app: ^1.2.1
   http: ^0.13.5
   datetime_picker_formfield_new: ^2.1.0
   percent_indicator: ^4.2.3
