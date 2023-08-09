@@ -7,12 +7,13 @@ import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../provider/HomeProvider.dart';
+
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var provider2 = Provider.of<ProfileProvider>(context);
     return SafeArea(
       child: Scaffold(
           body: Stack(
@@ -35,20 +36,15 @@ class Profile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamedAndRemoveUntil(
-                              App_Routes.home, (route) => false);
-                        },
+                        onPressed: () =>
+                            context.read<HomeProvider>().returnHome(),
                         icon: const Icon(Iconsax.arrow_left4)),
                     Text("profile",
                         style: TextStyle(
                             fontSize: 17.sp, fontWeight: FontWeight.w500)),
                     IconButton(
-                        onPressed: () {
-                          context
-                              .read<ProfileProvider>()
-                              .onchange_deletedata(context);
-                        },
+                        onPressed: () =>
+                            context.read<HomeProvider>().logout(context),
                         icon: Icon(
                           Iconsax.logout_1,
                           color: AppColours.danger500,
@@ -58,6 +54,7 @@ class Profile extends StatelessWidget {
                 Divider(
                   height: 12.h,
                 ),
+                ////////////////pic/////////////////////////////
                 CircleAvatar(
                   backgroundImage: const AssetImage(Assets.profilepic),
                   radius: 60,
@@ -67,16 +64,18 @@ class Profile extends StatelessWidget {
                   height: 1.h,
                   color: Colors.transparent,
                 ),
-                const Text(
-                  "Rafif Dian Axelingga",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                //////////////////////name///////////////////////////
+                Text(
+                  "${context.watch<HomeProvider>().state.username}",
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 Divider(
                   height: 1.h,
                   color: Colors.transparent,
                 ),
                 Text(
-                  "Senior UI/UX Designer",
+                  context.watch<ProfileProvider>().state.bioController.text,
                   style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -120,9 +119,9 @@ class Profile extends StatelessWidget {
                             )
                           ],
                         ),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: const [
+                          children: [
                             Text(
                               "46",
                               style: TextStyle(
@@ -169,7 +168,22 @@ class Profile extends StatelessWidget {
                           color: Colors.transparent,
                         ),
                         Text(
-                          "I'm Rafif Dian Axelingga, I’m UI/UX Designer, I have experience designing UI Design for approximately 1 year. I am currently joining the Vektora studio team based in Surakarta, Indonesia.I am a person who has a high spirit and likes to work to achieve what I dream of.",
+                          context
+                                  .watch<ProfileProvider>()
+                                  .state
+                                  .aboutController
+                                  .text
+                                  .isEmpty
+                              ? "I'm Rafif Dian Axelingga, I’m UI/UX Designer, I have "
+                                  "experience designing UI Design for approximately 1 year."
+                                  " I am currently joining the Vektora studio team "
+                                  "based in Surakarta, Indonesia.I am a person who has "
+                                  "a high spirit and likes to work to achieve what I dream of."
+                              : context
+                                  .watch<ProfileProvider>()
+                                  .state
+                                  .aboutController
+                                  .text,
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -391,9 +405,9 @@ class Profile extends StatelessWidget {
                   child: Container(
                     child: Column(children: [
                       //Accesibility
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text("Accesibility",
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w500)),
@@ -409,9 +423,9 @@ class Profile extends StatelessWidget {
                           Navigator.of(context)
                               .pushNamed(App_Routes.helpcenter);
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text("Help Center",
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500)),
@@ -428,9 +442,9 @@ class Profile extends StatelessWidget {
                           Navigator.of(context)
                               .pushNamed(App_Routes.termsandconditions);
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text("Terms & Conditions",
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500)),
@@ -447,9 +461,9 @@ class Profile extends StatelessWidget {
                           Navigator.of(context)
                               .pushNamed(App_Routes.privacypolicy);
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text("Privacy Policy",
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500)),
@@ -466,9 +480,9 @@ class Profile extends StatelessWidget {
                           Navigator.of(context)
                               .pushNamed(App_Routes.completeprofile);
                         },
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text("Complete Profile",
                                 style: TextStyle(
                                     fontSize: 16, fontWeight: FontWeight.w500)),

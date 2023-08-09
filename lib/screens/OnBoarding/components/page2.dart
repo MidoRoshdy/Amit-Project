@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 import '../../../core/app_routes.dart';
 import '../../../core/assets.dart';
 
+// ignore: must_be_immutable
 class OnBoarding_page2 extends StatelessWidget {
   OnBoarding_page2({super.key});
   int index = 1;

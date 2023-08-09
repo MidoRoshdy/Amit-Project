@@ -70,9 +70,9 @@ class _VerificationPage4State extends State<VerificationPage4> {
                       alignment: Alignment.topLeft,
                       child: Column(
                         children: [
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text("Enter the 6 digit code",
                                   style: TextStyle(
                                       fontSize: 18,

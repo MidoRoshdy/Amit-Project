@@ -1,6 +1,5 @@
 import 'package:amit_project/screens/home/components/message/provider/messagestate.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -63,8 +62,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),
@@ -101,8 +100,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),
@@ -139,8 +138,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),
@@ -177,8 +176,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),
@@ -215,8 +214,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),
@@ -253,8 +252,8 @@ class MessageProvier extends ChangeNotifier {
                       borderRadius: BorderRadius.circular(30),
                       border: Border.all(color: AppColours.neutral300),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(
                           width: 15,
                         ),

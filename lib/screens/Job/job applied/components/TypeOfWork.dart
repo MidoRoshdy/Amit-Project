@@ -16,7 +16,6 @@ class _TypeOfWorkState extends State<TypeOfWork> {
   @override
   Widget build(BuildContext context) {
     int radioValue = 1;
-    bool clicked = false;
     return SafeArea(
         child: Scaffold(
             body: Padding(

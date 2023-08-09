@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/screens/user_handel/create%20account/providers/create_account_state.dart';
@@ -103,10 +104,10 @@ class CreateAccountProvider extends ChangeNotifier {
     });
     if (response.statusCode == 200) {
       var jsonresponse = jsonDecode(response.body);
-      Map<String, dynamic> RegisterDataList =
+      Map<String, dynamic> registerDataList =
           Map<String, dynamic>.from(jsonresponse);
-
-      print(response.statusCode);
+      print(registerDataList);
+      log(response.statusCode);
       return true;
     } else {
       print(response.statusCode);

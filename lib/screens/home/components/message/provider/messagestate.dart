@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Data/Models/chat/chatmodel.dart';
-import '../../../../../Data/Models/chat/messageModel.dart';
+import '../../../../../Data/models/chat/chat_model.dart';
+import '../../../../../Data/models/chat/message_model.dart';
 import '../../../../../core/assets.dart';
 
 class MessageState {

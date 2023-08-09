@@ -72,9 +72,9 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                               Navigator.of(context)
                                   .pushNamed(App_Routes.emailaddress);
                             },
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Email address",
                                   style: TextStyle(
@@ -98,9 +98,9 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                               Navigator.of(context)
                                   .pushNamed(App_Routes.phonenumber);
                             },
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Phone number",
                                   style: TextStyle(
@@ -124,9 +124,9 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                               Navigator.of(context)
                                   .pushNamed(App_Routes.changepassword);
                             },
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Change password",
                                   style: TextStyle(
@@ -150,9 +150,9 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                               Navigator.of(context)
                                   .pushNamed(App_Routes.verfication);
                             },
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text(
                                   "Two-step verification",
                                   style: TextStyle(
@@ -171,9 +171,9 @@ class _LoginAndSecurityState extends State<LoginAndSecurity> {
                             color: Colors.grey[350],
                           ),
                           //Face ID
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               Text(
                                 "Face ID",
                                 style: TextStyle(

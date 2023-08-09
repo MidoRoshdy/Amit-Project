@@ -54,8 +54,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                       alignment: Alignment.topLeft,
                       child: Column(
                         children: [
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text("Enter your old password :",
                                   style: TextStyle(
                                       fontSize: 16,
@@ -139,8 +139,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                             height: 1.h,
                             color: Colors.transparent,
                           ),
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text("Enter your new password :",
                                   style: TextStyle(
                                       fontSize: 16,
@@ -220,8 +220,8 @@ class _ChangePasswordState extends State<ChangePassword> {
                                   )),
                             ),
                           ),
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text("Confirm your new password :",
                                   style: TextStyle(
                                       fontSize: 16,

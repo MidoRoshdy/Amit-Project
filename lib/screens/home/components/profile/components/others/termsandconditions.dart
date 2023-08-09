@@ -53,8 +53,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                       alignment: Alignment.topLeft,
                       child: Column(
                         children: [
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text(
                                 "Lorem ipsum dolor",
                                 style: TextStyle(
@@ -87,8 +87,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
                             height: 1.h,
                             color: Colors.transparent,
                           ),
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text(
                                 "Lorem ipsum dolor",
                                 style: TextStyle(

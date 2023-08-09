@@ -12,7 +12,6 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var provider1 = Provider.of<LoginProvider>(context);
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(

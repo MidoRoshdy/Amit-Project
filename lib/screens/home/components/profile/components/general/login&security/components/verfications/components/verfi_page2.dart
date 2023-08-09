@@ -127,18 +127,18 @@ class _VerificationPage2State extends State<VerificationPage2> {
                               width: 1.sp,
                             )),
                         duration: const Duration(milliseconds: 200),
-                        child: Column(
+                        child: const Column(
                           children: [
-                            const Divider(
+                            Divider(
                               height: 15,
                               color: Colors.transparent,
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
                                     "Telephone number (SMS)",
                                     style: TextStyle(

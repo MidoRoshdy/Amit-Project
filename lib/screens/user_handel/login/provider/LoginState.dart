@@ -1,4 +1,4 @@
-import 'package:amit_project/Data/Models/auth/login_model.dart';
+import 'package:amit_project/Data/models/auth_models/login_response_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/enum.dart';
@@ -21,5 +21,5 @@ class LoginState {
   //! bools
   bool hidePass = true;
   bool rememberMe = false;
-  LoginModel? loginModel;
+  LoginResponseModel? loginModel;
 }

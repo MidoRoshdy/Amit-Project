@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../Data/Models/jobs/suggestedjob_model.dart';
+import '../../../Data/models/auth_models/login_response_model.dart';
 import '../../../core/enum.dart';
 
 class HomeState {
@@ -28,7 +28,7 @@ class HomeState {
   bool isSelected = false;
   dynamic chosenItem;
   dynamic username;
-  List<SugestModel?>? suggest;
+
   List<Map> suggested = [];
   List<Map> jobs = [];
   List<Map> favorites = [];
@@ -48,6 +48,7 @@ class HomeState {
   LoadingState loadingState = LoadingState.initial;
 
   // late User profile;
+  late User profile;
 
   LoadingState savedLoadingState = LoadingState.initial;
 }

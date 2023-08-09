@@ -58,8 +58,8 @@ class _PhoneNumberState extends State<PhoneNumber> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Row(
-                              children: const [
+                            const Row(
+                              children: [
                                 Text(
                                   "Main phone number :",
                                   style: TextStyle(

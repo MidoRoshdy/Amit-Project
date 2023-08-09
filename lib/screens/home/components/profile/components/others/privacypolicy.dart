@@ -51,8 +51,8 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                 child: Container(
                   alignment: Alignment.topLeft,
                   child: Column(children: [
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Text(
                           "Your privacy is important",
                           style: TextStyle(
@@ -98,8 +98,8 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                       height: 3.h,
                       color: Colors.transparent,
                     ),
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Text(
                           "Data controllers and contract partners",
                           style: TextStyle(

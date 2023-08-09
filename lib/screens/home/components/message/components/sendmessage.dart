@@ -5,7 +5,8 @@ import 'package:grouped_list/grouped_list.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import '../../../../../Data/Models/chat/chatmodel.dart';
+
+import '../../../../../Data/models/chat/chat_model.dart';
 import '../../../../../core/colors.dart';
 
 class SendMassege extends StatefulWidget {

@@ -9,6 +9,7 @@ import '../../../core/colors.dart';
 import '../../../core/enum.dart';
 import '../../home/provider/HomeProvider.dart';
 
+// ignore: must_be_immutable
 class JobDetails extends StatefulWidget {
   JobDetails({super.key});
   int? index;

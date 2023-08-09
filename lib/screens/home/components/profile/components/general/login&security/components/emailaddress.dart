@@ -53,8 +53,8 @@ class _EmailAddressState extends State<EmailAddress> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Row(
-                            children: const [
+                          const Row(
+                            children: [
                               Text(
                                 "Main e-mail address :",
                                 style: TextStyle(

@@ -7,6 +7,7 @@ import 'package:amit_project/screens/home/provider/HomeState.dart';
 import 'package:amit_project/screens/user_handel/login/provider/LoginState.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
+import 'package:restart_app/restart_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/api_routes.dart';
 import '../../../core/enum.dart';
@@ -67,6 +68,12 @@ class HomeProvider extends ChangeNotifier {
       default:
         return const SizedBox();
     }
+  }
+
+  void returnHome() {
+    state.chosenNavigationItem = ChosenNavigationItem.home;
+    state.navigationIndex = 0;
+    notifyListeners();
   }
 
   Widget chosenJobDetailsSection() {
@@ -161,6 +168,8 @@ class HomeProvider extends ChangeNotifier {
   }
 
   Future<void> fetchSuggestedData() async {
+    state.loadingState = LoadingState.loading;
+    notifyListeners();
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String? token = sharedPreferences.getString("token");
     print("token: $token");
@@ -263,11 +272,5 @@ class HomeProvider extends ChangeNotifier {
     shared.setBool("registered", true);
     shared.setBool("onBoard", true);
     Restart.restartApp();
-  }
-
-  void returnHome() {
-    state.chosenNavigationItem = ChosenNavigationItem.home;
-    state.navigationIndex = 0;
-    notifyListeners();
   }
 }

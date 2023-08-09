@@ -1,13 +1,11 @@
-import 'package:amit_project/core/app_routes.dart';
 import 'package:amit_project/core/assets.dart';
 import 'package:amit_project/core/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../../../Job/job applied/provider/JobAppliedProvider.dart';
+import '../../../../../../core/enum.dart';
+import '../../provider/profileprovider.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -19,239 +17,259 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            height: 100.h,
-            width: 100.w,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Row(
+    return Scaffold(
+      body: context.watch<ProfileProvider>().state.detailsLoadingState ==
+              LoadingState.loading
+          ? SizedBox(
+              height: 100.h,
+              child: const CircularProgressIndicator(),
+            )
+          : SafeArea(
+              child: SingleChildScrollView(
+                  child: Column(children: [
+              //! header
+              SizedBox(
+                height: 10.h,
+                width: 100.w,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  child: Stack(
                     children: [
-                      IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          icon: const Icon(Iconsax.arrow_left4)),
-                      SizedBox(
-                        width: 25.w,
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          onPressed: () => Navigator.pop(context),
+                          iconSize: 20.sp,
+                          icon: const Icon(Iconsax.arrow_left4),
+                        ),
                       ),
-                      Text("Edit Profile",
+                      Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Edit Profile",
                           style: TextStyle(
-                              fontSize: 17.sp, fontWeight: FontWeight.w500)),
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                      )
                     ],
                   ),
-                  Divider(
-                    height: 3.h,
-                    color: Colors.transparent,
-                  ),
-                  const CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage(Assets.profilepic),
-                  ),
-                  Divider(
-                    height: 2.h,
-                    color: Colors.transparent,
-                  ),
-                  Text(
-                    "Change Photo",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: AppColours.primary500),
-                  ),
-                  Divider(
-                    height: 1.h,
-                    color: Colors.transparent,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 56.h,
-                      // color: Colors.red,
-
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+              ),
+              Divider(height: 1.h, color: Colors.transparent),
+              CircleAvatar(
+                backgroundImage: const AssetImage(Assets.profilepic),
+                radius: 6.h,
+                backgroundColor: AppColours.primary500,
+              ),
+              Divider(height: 2.h, color: Colors.transparent),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  "Change Photo",
+                  style: TextStyle(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColours.primary500),
+                ),
+              ),
+              Divider(height: 2.h, color: Colors.transparent),
+              //! forms
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                child: SizedBox(
+                  height: 66.h,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          ///////////////////////////Name//////////////////////////
                           Text(
                             "Name",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: AppColours.neutral500),
-                          ),
-                          Divider(
-                            height: 1.h,
-                            color: Colors.transparent,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(1.w),
-                            margin: EdgeInsets.only(bottom: 2.h),
-                            alignment: Alignment.center,
-                            height: 8.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                border: Border.all(
-                                  width: 1.sp,
-                                )),
-                            child: TextField(
-                              style: TextStyle(fontSize: 14.sp),
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "UserName",
-                                prefixIcon: Icon(
-                                  Iconsax.user,
-                                ),
-                              ),
-                            ),
-                          ),
-                          //////////////////////////bio////////////////////////////
+                                color: AppColours.neutral400,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        margin: EdgeInsets.only(top: 1.h, bottom: 2.h),
+                        alignment: Alignment.center,
+                        height: 7.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                width: 1.sp,
+                                color: context
+                                            .watch<ProfileProvider>()
+                                            .state
+                                            .name ==
+                                        null
+                                    ? AppColours.neutral300
+                                    : context
+                                                .watch<ProfileProvider>()
+                                                .state
+                                                .nameErrorMessage !=
+                                            null
+                                        ? AppColours.danger500
+                                        : AppColours.primary500)),
+                        child: TextField(
+                          controller: context
+                              .read<ProfileProvider>()
+                              .state
+                              .nameController,
+                          onChanged:
+                              context.read<ProfileProvider>().onNameChange,
+                          onSubmitted:
+                              context.read<ProfileProvider>().onNameChange,
+                          style: TextStyle(fontSize: 14.sp),
+                          decoration: const InputDecoration(
+                              border: InputBorder.none, hintText: "Name"),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
                           Text(
                             "Bio",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: AppColours.neutral500),
-                          ),
-                          Divider(
-                            height: 1.h,
-                            color: Colors.transparent,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(1.w),
-                            margin: EdgeInsets.only(bottom: 2.h),
-                            alignment: Alignment.center,
-                            height: 8.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                border: Border.all(
-                                  width: 1.sp,
-                                )),
-                            child: TextField(
-                              style: TextStyle(fontSize: 14.sp),
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Bio",
-                                prefixIcon: Icon(
-                                  Iconsax.text,
-                                ),
-                              ),
-                            ),
-                          ),
-                          //////////////////////////address////////////////////////
+                                color: AppColours.neutral400,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        margin: EdgeInsets.only(top: 1.h, bottom: 2.h),
+                        alignment: Alignment.center,
+                        height: 7.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                width: 1.sp,
+                                color: context
+                                            .watch<ProfileProvider>()
+                                            .state
+                                            .bio ==
+                                        null
+                                    ? AppColours.neutral300
+                                    : context
+                                                .watch<ProfileProvider>()
+                                                .state
+                                                .bioErrorMessage !=
+                                            null
+                                        ? AppColours.danger500
+                                        : AppColours.primary500)),
+                        child: TextField(
+                          controller: context
+                              .read<ProfileProvider>()
+                              .state
+                              .bioController,
+                          onChanged:
+                              context.read<ProfileProvider>().onBioChange,
+                          onSubmitted:
+                              context.read<ProfileProvider>().onBioChange,
+                          style: TextStyle(fontSize: 14.sp),
+                          decoration: const InputDecoration(
+                              border: InputBorder.none, hintText: "Bio"),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
                           Text(
                             "Address",
                             style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: AppColours.neutral500),
-                          ),
-                          Divider(
-                            height: 1.h,
-                            color: Colors.transparent,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(1.w),
-                            margin: EdgeInsets.only(bottom: 2.h),
-                            alignment: Alignment.center,
-                            height: 8.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                border: Border.all(
-                                  width: 1.sp,
-                                )),
-                            child: TextField(
-                              style: TextStyle(fontSize: 14.sp),
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Address",
-                                prefixIcon: Icon(
-                                  Iconsax.global,
-                                ),
-                              ),
-                            ),
-                          ),
-                          //////////////////////////Number/////////////////////////
-                          Text(
-                            "No.Handphone",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: AppColours.neutral500),
-                          ),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 3.w, vertical: 1.w),
-                            margin: EdgeInsets.only(top: 2.h),
-                            alignment: Alignment.center,
-                            height: 8.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                    width: 1.sp, color: AppColours.neutral300)),
-                            child: InternationalPhoneNumberInput(
-                              keyboardType: TextInputType.number,
-                              onSaved: context
-                                  .read<JobAppliedProvider>()
-                                  .onPhoneNumberChange,
-                              selectorConfig: const SelectorConfig(
-                                selectorType: PhoneInputSelectorType.DROPDOWN,
-                              ),
-                              ignoreBlank: true,
-                              onInputChanged: context
-                                  .read<JobAppliedProvider>()
-                                  .onPhoneNumberChange,
-                              inputBorder: InputBorder.none,
-                            ),
-                          ),
+                                color: AppColours.neutral400,
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500),
+                          )
                         ],
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 90.w,
-                    height: 7.h,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamedAndRemoveUntil(
-                            App_Routes.profile, (route) => false);
-                      },
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50)),
-                          backgroundColor: AppColours.primary600),
-                      child: Text(
-                        "Save",
-                        style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w500),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        margin: EdgeInsets.only(top: 1.h, bottom: 2.h),
+                        alignment: Alignment.center,
+                        height: 7.h,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                                width: 1.sp,
+                                color: context
+                                            .watch<ProfileProvider>()
+                                            .state
+                                            .address ==
+                                        null
+                                    ? AppColours.neutral300
+                                    : context
+                                                .watch<ProfileProvider>()
+                                                .state
+                                                .addressErrorMessage !=
+                                            null
+                                        ? AppColours.danger500
+                                        : AppColours.primary500)),
+                        child: TextField(
+                          controller: context
+                              .read<ProfileProvider>()
+                              .state
+                              .addressController,
+                          onChanged:
+                              context.read<ProfileProvider>().onAddressChange,
+                          onSubmitted:
+                              context.read<ProfileProvider>().onAddressChange,
+                          style: TextStyle(fontSize: 14.sp),
+                          decoration: const InputDecoration(
+                              border: InputBorder.none, hintText: "Address"),
+                        ),
                       ),
-                    ),
+                      const Spacer(),
+                      //! save button
+                      SizedBox(
+                        width: 90.w,
+                        height: 7.h,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            context.read<ProfileProvider>().validate() == true
+                                ? context
+                                    .read<ProfileProvider>()
+                                    .saveProfile(context)
+                                : null;
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  context.read<ProfileProvider>().validate() ==
+                                          true
+                                      ? AppColours.primary500
+                                      : AppColours.neutral300,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50))),
+                          child: Text(
+                            "Save",
+                            style: TextStyle(
+                                color: context
+                                            .read<ProfileProvider>()
+                                            .validate() ==
+                                        true
+                                    ? Colors.white
+                                    : AppColours.neutral500,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.transparent,
+                        height: 5.h,
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ),
-          //icon photo
-          Positioned(
-            right: 19.2.h,
-            bottom: 74.5.h,
-            child: const CircleAvatar(
-              backgroundColor: Color.fromARGB(120, 59, 57, 57),
-              radius: 50,
-              child: Icon(
-                Iconsax.camera,
-                color: Colors.white,
-                size: 40,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ));
+            ]))),
+    );
   }
 }

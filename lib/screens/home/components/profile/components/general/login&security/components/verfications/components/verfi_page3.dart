@@ -58,9 +58,9 @@ class _VerificationPage3State extends State<VerificationPage3> {
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Add phone number",
                                   style: TextStyle(
@@ -112,9 +112,9 @@ class _VerificationPage3State extends State<VerificationPage3> {
                               height: 2.h,
                               color: Colors.transparent,
                             ),
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Enter your password",
                                   style: TextStyle(

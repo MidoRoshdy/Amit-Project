@@ -9,3 +9,5 @@ enum SelectedJobAppliedSection { Active, Rejected }
 enum LoadingState { initial, loading, error, done }
 
 enum FilePicking { choosing, error, done, initial }
+
+enum VerificationMethod { sms, authenticator }

@@ -101,19 +101,19 @@ class _HelpCenterState extends State<HelpCenter> {
                                     width: 1.sp,
                                   )),
                               duration: const Duration(milliseconds: 200),
-                              child: SingleChildScrollView(
+                              child: const SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    const Divider(
+                                    Divider(
                                       height: 15,
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "Lorem ipsum dolor sit amet",
                                             style: TextStyle(
@@ -124,7 +124,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                         ],
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                         "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit. Fusce ultricies mi enim, quis vulputate nibh\n faucibus at. Maecenas est ante, suscipit vel sem\n non, blandit blandit erat. Praesent pulvinar ante et\n felis porta vulputate. Curabitur ornare velit nec\n fringilla finibus. Phasellus mollis pharetra ante, in\n ullamcorper massa ullamcorper et. Curabitur ac leo\n sit amet leo interdum mattis vel eu mauris.")
                                   ],
                                 ),
@@ -152,19 +152,19 @@ class _HelpCenterState extends State<HelpCenter> {
                                     width: 1.sp,
                                   )),
                               duration: const Duration(milliseconds: 200),
-                              child: SingleChildScrollView(
+                              child: const SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    const Divider(
+                                    Divider(
                                       height: 15,
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "Lorem ipsum dolor sit amet",
                                             style: TextStyle(
@@ -175,7 +175,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                         ],
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                         "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit. Fusce ultricies mi enim, quis vulputate nibh\n faucibus at. Maecenas est ante, suscipit vel sem\n non, blandit blandit erat. Praesent pulvinar ante et\n felis porta vulputate. Curabitur ornare velit nec\n fringilla finibus. Phasellus mollis pharetra ante, in\n ullamcorper massa ullamcorper et. Curabitur ac leo\n sit amet leo interdum mattis vel eu mauris.")
                                   ],
                                 ),
@@ -203,19 +203,19 @@ class _HelpCenterState extends State<HelpCenter> {
                                     width: 1.sp,
                                   )),
                               duration: const Duration(milliseconds: 200),
-                              child: SingleChildScrollView(
+                              child: const SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    const Divider(
+                                    Divider(
                                       height: 15,
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "Lorem ipsum dolor sit amet",
                                             style: TextStyle(
@@ -226,7 +226,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                         ],
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                         "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit. Fusce ultricies mi enim, quis vulputate nibh\n faucibus at. Maecenas est ante, suscipit vel sem\n non, blandit blandit erat. Praesent pulvinar ante et\n felis porta vulputate. Curabitur ornare velit nec\n fringilla finibus. Phasellus mollis pharetra ante, in\n ullamcorper massa ullamcorper et. Curabitur ac leo\n sit amet leo interdum mattis vel eu mauris.")
                                   ],
                                 ),
@@ -254,19 +254,19 @@ class _HelpCenterState extends State<HelpCenter> {
                                     width: 1.sp,
                                   )),
                               duration: const Duration(milliseconds: 200),
-                              child: SingleChildScrollView(
+                              child: const SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    const Divider(
+                                    Divider(
                                       height: 15,
                                       color: Colors.transparent,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(10),
+                                      padding: EdgeInsets.all(10),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
-                                        children: const [
+                                        children: [
                                           Text(
                                             "Lorem ipsum dolor sit amet",
                                             style: TextStyle(
@@ -277,7 +277,7 @@ class _HelpCenterState extends State<HelpCenter> {
                                         ],
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                         "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit. Fusce ultricies mi enim, quis vulputate nibh\n faucibus at. Maecenas est ante, suscipit vel sem\n non, blandit blandit erat. Praesent pulvinar ante et\n felis porta vulputate. Curabitur ornare velit nec\n fringilla finibus. Phasellus mollis pharetra ante, in\n ullamcorper massa ullamcorper et. Curabitur ac leo\n sit amet leo interdum mattis vel eu mauris.")
                                   ],
                                 ),

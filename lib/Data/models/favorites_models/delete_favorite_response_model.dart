@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:amit_project/Data/Models/favourite/datum.dart';
+import 'package:amit_project/Data/models/favorites_models/datum.dart';
 
 DeleteFavoriteResponseModel deleteFavoriteResponseModelFromJson(String str) =>
     DeleteFavoriteResponseModel.fromJson(json.decode(str));
