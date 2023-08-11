@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 import '../../../../../Data/models/portfolio_models/get_portfolio_response_model.dart';
 import '../../../../../core/enum.dart';
@@ -47,7 +48,7 @@ class ProfileState {
   String? name;
   String? bio;
   String? address;
-
+  PhoneNumber? phone;
   String? email;
 
   String? oldPass;

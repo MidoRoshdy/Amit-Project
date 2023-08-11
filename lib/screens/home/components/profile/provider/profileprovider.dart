@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:email_validator/email_validator.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:path/path.dart';
 
 import 'package:amit_project/screens/home/components/profile/provider/profilestate.dart';
@@ -285,5 +287,44 @@ class ProfileProvider extends ChangeNotifier {
   void messageNudgesChange(bool value) {
     state.messageNudges = value;
     notifyListeners();
+  }
+
+  void onEmailChange(String value) {
+    value.isEmpty
+        ? state.emailErrorMessage = "You must enter an e-mail"
+        : EmailValidator.validate(value)
+            ? state.emailErrorMessage = null
+            : state.emailErrorMessage = "Enter a valid e-mail";
+    state.email = value;
+    notifyListeners();
+  }
+
+  bool checkEmail() {
+    return state.email != null && state.emailErrorMessage == null;
+  }
+
+  void saveEmail(BuildContext context) {
+    Navigator.of(context).pop();
+  }
+
+  void onPhoneChange(PhoneNumber value) {
+    value.phoneNumber == value.dialCode
+        ? state.phoneErrorMessgae = "Phone is required"
+        : state.phoneErrorMessgae = null;
+    state.phone = value;
+    notifyListeners();
+  }
+
+  void phoneToResetPassChange(bool value) {
+    state.phoneToResetPass = value;
+    notifyListeners();
+  }
+
+  bool checkPhone() {
+    return state.phone != null && state.phoneErrorMessgae == null;
+  }
+
+  void savePhone(BuildContext context) {
+    Navigator.of(context).pop();
   }
 }

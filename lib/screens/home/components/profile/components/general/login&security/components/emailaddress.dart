@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../../../../core/colors.dart';
+import '../../../../provider/profileprovider.dart';
 
 class EmailAddress extends StatefulWidget {
   const EmailAddress({super.key});
@@ -73,11 +75,34 @@ class _EmailAddressState extends State<EmailAddress> {
                                   width: 1.sp,
                                 )),
                             child: TextField(
+                                controller: context
+                                    .read<ProfileProvider>()
+                                    .state
+                                    .emailController,
+                                onChanged: context
+                                    .read<ProfileProvider>()
+                                    .onEmailChange,
+                                onSubmitted: context
+                                    .read<ProfileProvider>()
+                                    .onEmailChange,
                                 style: TextStyle(fontSize: 14.sp),
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
+                                  prefixIconColor: context
+                                              .read<ProfileProvider>()
+                                              .state
+                                              .email ==
+                                          null
+                                      ? AppColours.neutral300
+                                      : context
+                                                  .read<ProfileProvider>()
+                                                  .state
+                                                  .emailErrorMessage !=
+                                              null
+                                          ? AppColours.danger500
+                                          : AppColours.primary500,
                                   border: InputBorder.none,
                                   hintText: "Email",
-                                  prefixIcon: Icon(
+                                  prefixIcon: const Icon(
                                     Iconsax.sms,
                                   ),
                                 )),
@@ -101,7 +126,9 @@ class _EmailAddressState extends State<EmailAddress> {
                 height: 7.h,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    context.read<ProfileProvider>().checkEmail() == true
+                        ? context.read<ProfileProvider>().saveEmail(context)
+                        : null;
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(

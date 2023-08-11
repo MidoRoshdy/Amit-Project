@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../../../../core/colors.dart';
-import '../../../../../../../Job/job applied/provider/JobAppliedProvider.dart';
+import '../../../../provider/profileprovider.dart';
 
 class PhoneNumber extends StatefulWidget {
   const PhoneNumber({super.key});
@@ -18,7 +17,6 @@ class PhoneNumber extends StatefulWidget {
 class _PhoneNumberState extends State<PhoneNumber> {
   @override
   Widget build(BuildContext context) {
-    bool status = false;
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -80,14 +78,17 @@ class _PhoneNumberState extends State<PhoneNumber> {
                                       width: 1.sp,
                                       color: AppColours.neutral300)),
                               child: InternationalPhoneNumberInput(
-                                keyboardType: TextInputType.number,
+                                countrySelectorScrollControlled: false,
+                                onSaved: context
+                                    .read<ProfileProvider>()
+                                    .onPhoneChange,
                                 selectorConfig: const SelectorConfig(
-                                  selectorType: PhoneInputSelectorType.DROPDOWN,
+                                  selectorType:
+                                      PhoneInputSelectorType.BOTTOM_SHEET,
                                 ),
-                                ignoreBlank: true,
                                 onInputChanged: context
-                                    .read<JobAppliedProvider>()
-                                    .onPhoneNumberChange,
+                                    .read<ProfileProvider>()
+                                    .onPhoneChange,
                                 inputBorder: InputBorder.none,
                               ),
                             ),
@@ -110,21 +111,15 @@ class _PhoneNumberState extends State<PhoneNumber> {
                               fontWeight: FontWeight.w500,
                               color: AppColours.neutral500),
                         ),
-                        FlutterSwitch(
-                          width: 17.w,
-                          height: 4.h,
-                          valueFontSize: 25.0,
-                          toggleSize: 25.0,
-                          value: status,
-                          borderRadius: 30.0,
-                          padding: 4.0,
-                          showOnOff: false,
-                          onToggle: (val) {
-                            setState(() {
-                              status = val;
-                            });
-                          },
-                        ),
+                        Switch.adaptive(
+                          value: context
+                              .watch<ProfileProvider>()
+                              .state
+                              .phoneToResetPass,
+                          onChanged: context
+                              .read<ProfileProvider>()
+                              .phoneToResetPassChange,
+                        )
                       ],
                     ),
                   )
@@ -139,7 +134,9 @@ class _PhoneNumberState extends State<PhoneNumber> {
                 height: 7.h,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    context.read<ProfileProvider>().checkPhone() == true
+                        ? context.read<ProfileProvider>().savePhone(context)
+                        : null;
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
