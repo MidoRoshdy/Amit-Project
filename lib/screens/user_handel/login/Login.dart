@@ -320,9 +320,9 @@ class Login extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
-                        onTap: () => context
+                        onTap: () async => await context
                             .read<LoginProvider>()
-                            .logInWithGoogle(context),
+                            .logInWithGoogle(),
                         child: Container(
                           width: 40.w,
                           height: 6.h,
@@ -335,9 +335,9 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () => context
+                        onTap: () async => await context
                             .read<LoginProvider>()
-                            .logInWithFacebook(context),
+                            .logInWithFacebook(),
                         child: Container(
                           width: 40.w,
                           height: 6.h,
